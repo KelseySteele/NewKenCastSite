@@ -1,0 +1,213 @@
+﻿/*--navigation bar--*/
+ .logo {
+   padding: 15px;
+}
+
+.kencast-text {
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.kencast-text:hover {
+    color: #041690;
+}
+
+/*--homepage--*/
+.carouselCaptionBox {
+    width: 20%;
+    float: left;
+    left: 15%;
+    margin-bottom: 20px;
+    color: black;
+    text-align: left;
+    padding-bottom: 50px;
+    /*margin-top: -60px;
+    position: absolute;
+    display: block;*/
+}
+
+.learnMore {
+    background-color: #041690;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    /*float: left;*/
+    /*left: 15%;*/
+    padding: 10px;
+}
+
+
+
+.text-white {
+  color: white;
+}
+
+/*--Checklist Page--*/
+
+table, th , td  {
+  border: none;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #666;
+  color: white;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.tableText{
+  color: black;
+  font-size: 16px;
+}
+
+.printButton{
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  text-align:center;
+  width:200px;
+  height: 50px;
+  margin: 40px auto;
+}
+
+.printDiv {
+  text-align:center;
+  vertical-align:middle;
+  height:100%;
+  }
+
+/*-- FAQ Page --*/
+.answer{
+  color: #D3D3D3;
+  padding: 0 20px;
+}
+
+.faq-wrapper{
+    margin-top: 20px;
+}
+/*-- Instructions Page ---*/
+
+.instRelative {
+  position: relative;
+}
+
+.faqImage {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+
+/*-- Overview Page --*/
+.panelImage {
+    float: left;
+}
+
+.instAbsolute {
+  /*--Pop Up Window--*/
+  position: absolute;
+  top: 80px;
+  left: 73px;
+  margin-right: -70px;
+  background: white;
+  opacity: 0.9;
+  z-index: 10;
+  padding: 20px;
+}
+
+.popUpText {
+  font-size: 18px;
+}
+
+.text-grey {
+  color: #333;
+}
+
+.figureCaption {
+  color: #666;
+}
+
+.box {
+  background-color: #666;
+  margin: 15px 5px;
+  height: 500px;
+  text-align: center;
+}
+
+.instructionsBtn{
+  margin: 20px 10px;
+  width: 75%;
+  padding: 5px 10px;
+  white-space: normal;
+}
+
+.viewBroadcastBtn {
+  margin-top: 130px;
+  width: 200px;
+  width: 75%;
+  padding: 5px 10px;
+  white-space: normal;
+}
+
+.attachCameraBtn {
+  margin-top: 80px;
+}
+
+.glyphicon-arrow-right {
+    font-size: 50px;
+    margin-top: 170px;
+}
+
+.use-nav-tabs {
+    background-color: #2196f3;
+    font: white;
+}
+
+/*-- Slideshow on homepage ---*/
+
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+    height: 360px; /*Kelsey added this*/
+}
+
+.jumbotron {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+
+.jumbotron img{
+    width: 100%; /*img width*/
+    height: 360px; /*Kelsey added this*/
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .carouselCaptionBox {
+        margin-top: -25px;
+        width: 100%;
+    }
+}
+
+/* mobile device */
+@media only screen and (max-device-width: 480px) {
+    .instAbsolute{
+        left: 0;
+    }
+    .carouselCaptionBox {
+        width: 100%;
+    }
+
+}
