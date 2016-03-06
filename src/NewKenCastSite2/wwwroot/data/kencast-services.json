@@ -1,0 +1,33 @@
+﻿[
+  {
+    "id": "fazztsoftware",
+    "title": "Fazzt Software",
+    "sub-menu": {
+      "Applications": "Fazzt Applications",
+      "Equipment": "Fazzt Equipment",
+      "flowchart": "Fazzt graphic goes here",
+      "Options": "Fazzt variations"
+    }
+  },
+
+  {
+    "id": "cinemaspecific",
+    "title": "Cinema Specific",
+    "sub-menu": {
+      "Applications": "Cinema Applications",
+      "Equipment": "CinemaPro Client",
+      "flowchart": "Cinema graphic goes here",
+      "Options": "Cinema variations"
+    }
+  },
+  {
+    "id": "mobileplatform",
+    "title": "Mobile Platform",
+    "sub-menu": {
+      "Applications": "Mobile Applications",
+      "Equipment": "Mobile Equipment",
+      "flowchart": "Mobile Flowchart",
+      "Options": "Mobile variations"
+    }
+  }
+]

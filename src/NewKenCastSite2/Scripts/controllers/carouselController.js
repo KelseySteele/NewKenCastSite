@@ -22,7 +22,7 @@
                 },
                 {
                     image: 'images/homeCarousel/customizable-solutions.jpg',
-                    text: 'Customizable solutions'
+                    text: 'Develop customized solutions to meet your needs'
                 }
     ]
    

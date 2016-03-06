@@ -3,7 +3,7 @@
 //    'use strict';
 
     //Creates a module called KenCast
-    var app = angular.module('kencast', ['ngRoute','ngSanitize', 'ui.bootstrap'])
+    var app = angular.module('kencast', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngAnimate', 'ngRoute'])
 
 
     app.config(['$routeProvider', function ($routeProvider) {
@@ -11,11 +11,25 @@
 
         $routeProvider
                 .when('/home', {
-                templateUrl: 'views/home.html'
+                    templateUrl: 'views/home.html'
                 })
                  .when('/services', {
-                     template: '<h5>This is the services route</h5>'
+                     templateUrl: 'views/services/services.html',
+                     controller: 'ServicesController',
+                     controllerAs: 'servicesCtrl'
                  })
+                  .when('/services/:id', {
+                      templateUrl: 'views/services/single-service.html',
+                      controller: 'SingleServicesController',
+                      controllerAs: 'singleServicesCtrl'
+                  })
+
+                  //.when('/service-profile/:id', {
+                  //    templateUrl: 'views/service-profile.html',
+                  //    controller: 'ServiceProfileController',
+                  //    controllerAs: 'profileCtrl'
+                  //})
+
                  .when('/case-studies', {
                      template: '<h5>This is the case studies route<h5>'
                  })
@@ -30,6 +44,7 @@
                  })
                  .otherwise({ redirectTo: '/home' });
     }]);
+
 
 
 })();

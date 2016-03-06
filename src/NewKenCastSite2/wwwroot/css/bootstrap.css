@@ -3520,6 +3520,7 @@ tbody.collapse.in {
 .dropup,
 .dropdown {
   position: relative;
+  display: inline-block; /*Kelsey added*/
 }
 .dropdown-toggle:focus {
   outline: 0;

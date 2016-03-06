@@ -1,34 +1,43 @@
 ﻿
 <div class="navigation-wrapper">
     <nav class="navbar navbar-default">
-        <div class="navbar-header"><!-- /veggieburger icon -->
+        <div class="navbar-header">
+            <!-- /veggieburger icon -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <p class="navbar-text visible-xs-inline-block">Text Here</p>
-            <div class="logo"><a href="#/home"><img src="../images/kencastlogo.jpg" /></a></div>
         </div>
-        <div class="container-fluid">
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navBar">            
-                <ul class="nav navbar-nav navigation-bar kencast-text">
-                    <li><a href="#/services">Services</a></li>
-                    <!--<li ><a  href="#/services" class="dropdown-toggle" data-toggle="dropdown">Services</a>
-                        <ul class="dropdown-meunu">
-                            <li><a href="#/services">Fazzt Software</a></li>
-                            <li><a href="#/services">Cinema Specific</a></li>
-                            <li><a href="#/services">Mobile Platform</a></li>
-                        </ul>
-                    </li>-->
-                    <li><a href="#/case-studies">Case Studies</a></li>
-                    <li><a href="#/company">Company</a></li>
-                    <li><a href="#/contact-us">Contact Us</a></li>
-                    <li><a href="#/site-map">Site Map</a></li>
-                </ul>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="logo col-md-2">
+                <a href="#/home">
+                    <img src="../images/kencastlogo.jpg" />
+                </a>
             </div>
-            <ul class="nav navbar-nav navbar-right"></ul>
-        </div> <!-- /.navbar-collapse -->
-  </nav>
-</div> <!-- /.container-fluid -->
+            <div ng-controller="NavigationController as navigationCtrl">
+                
+                <div class="container-fluid navbar-container">          
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navBar">
+                        <ul class="menu nav navbar-nav  kencast-text">
+                            <li class="dropdown" ng-repeat="menu in navigationCtrl.menus">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="{{menu.action}}">{{menu.title}}</a>
+                                <ul ng-if="menu.submenus" class="sub-menu dropdown-menu">
+                                    <li ng-repeat="submenu in menu.submenus">
+                                        <a href="{{submenu.action}}">{{submenu.title}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <ul class="nav navbar-nav navbar-right"></ul>
+                </div>
+            </div>
+        </div>
+<!-- /.navbar-collapse -->
+    </nav>
+</div>

@@ -1,0 +1,27 @@
+﻿<div class="container-fluid">
+    <div class="row homepage-pad">
+        <div class="col-md-1"></div>
+        <h2 class="col-md-10">Services</h2>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p>KenCast delivers large files and video streams to thousands of locations all over the world. Our core product is our Fazzt software; it is at the heart of all of our content network delivery services. Our services are customizable and we pride ourselves in making our program work for your industry.
+             We are Hollywood's choice when it comes to delivering movies to thousands of theatres. Our cinema specific content delivery service is expanding into Europe, India, and Latin America.</p>
+            <p>We look forward to working with you soon!</p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div ng-controller="ServicesController as servicesCtrl" class="row">
+        <div class="col-md-1"></div>
+        <div ng-repeat="service in servicesCtrl.services" class="col-md-3 logo">
+            <a ng-href="#/services/{{service.id}}" >
+                <img ng-src="{{service.image}}" />
+                <h3>{{service.title}}</h3>
+                <p>{{service.text}}</p>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
