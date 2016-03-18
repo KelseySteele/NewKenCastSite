@@ -4,17 +4,21 @@
 
     angular.module('kencast')
 
-    .controller('SingleServicesController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
-        $http.get('js/data.json').success(function (data) {
-            $scope.serviceData = data;
-            $scope.whichService = $routeParams.id;
-        });
-    }]
+    .controller('SingleServicesController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams ) {
 
-    )
-}
-    )
-();
+        $scope.services = [];
+
+        $http.get('/data/kencast-services.json').success(function (data) {
+            angular.forEach(data, function(service) {
+                if (service.id == $routeParams.id) 
+                    $scope.services.push(service);            
+            });
+        });
+
+
+
+    }]);
+})();
 
 
 

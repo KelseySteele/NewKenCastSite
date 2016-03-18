@@ -19,16 +19,16 @@
                      controllerAs: 'servicesCtrl'
                  })
                   .when('/services/:id', {
-                      templateUrl: 'views/services/single-service.html',
+                      templateUrl: 'views/services/home-service.html',
                       controller: 'SingleServicesController',
                       controllerAs: 'singleServicesCtrl'
                   })
 
-                  //.when('/service-profile/:id', {
-                  //    templateUrl: 'views/service-profile.html',
-                  //    controller: 'ServiceProfileController',
-                  //    controllerAs: 'profileCtrl'
-                  //})
+                  .when('/services/:id/:id', {
+                      templateUrl: 'views/services/service-profile.html',
+                      controller: 'ServiceProfileController',
+                      controllerAs: 'profileCtrl'
+                  })
 
                  .when('/case-studies', {
                      template: '<h5>This is the case studies route<h5>'

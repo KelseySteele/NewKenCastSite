@@ -2,32 +2,38 @@
   {
     "id": "fazztsoftware",
     "title": "Fazzt Software",
-    "sub-menu": {
+    "overview" : "Overview of Fazzt Software goes here",  
+    "submenus": {
       "Applications": "Fazzt Applications",
+      "FAQ": "Fazzt FAQ",
       "Equipment": "Fazzt Equipment",
-      "flowchart": "Fazzt graphic goes here",
-      "Options": "Fazzt variations"
+      "Flowchart": "Fazzt graphic goes here",
+      "Options": "Fazzt Variations"
     }
   },
 
   {
     "id": "cinemaspecific",
     "title": "Cinema Specific",
-    "sub-menu": {
+    "overview" : "Overview of Cinema Specific Services goes here",
+    "submenus": {
       "Applications": "Cinema Applications",
+      "FAQ": "Cinema Specific FAQ",
       "Equipment": "CinemaPro Client",
-      "flowchart": "Cinema graphic goes here",
-      "Options": "Cinema variations"
+      "Flowchart": "Cinema graphic goes here",
+      "Options": "Cinema Variations"
     }
   },
   {
     "id": "mobileplatform",
     "title": "Mobile Platform",
-    "sub-menu": {
+    "overview" : "Overview of Mobile Platform Services go here",
+    "submenus": {
       "Applications": "Mobile Applications",
+      "FAQ": "Mobile FAQ",
       "Equipment": "Mobile Equipment",
-      "flowchart": "Mobile Flowchart",
-      "Options": "Mobile variations"
+      "Flowchart": "Mobile Flowchart",
+      "Options": "Mobile Variations"
     }
   }
 ]
