@@ -1,4 +1,13 @@
-﻿/*--navigation bar--*/
+﻿/*material design components*/
+ md-toolbar md-icon.md-default-theme {
+  color: #041690;
+ }
+
+.md-toolbar h3 {
+     color: white;
+ }
+
+/*--navigation bar--*/
  .logo {
    padding-top: 30px;
    padding-bottom: 30px;

@@ -3,7 +3,7 @@
 //    'use strict';
 
     //Creates a module called KenCast
-    var app = angular.module('kencast', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngAnimate', 'ngRoute'])
+    var app = angular.module('kencast', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngAnimate', 'ngMaterial'])
 
 
     app.config(['$routeProvider', function ($routeProvider) {
@@ -13,21 +13,20 @@
                     templateUrl: 'views/home.html'
                 })
                  .when('/services', {
-                     templateUrl: 'views/services/services.html',
-                     controller: 'ServicesController',
-                     controllerAs: 'servicesCtrl'
+                     templateUrl: 'views/services/index.html',
+                     controller: 'MainServicesController',
+                     controllerAs: 'mainServicesCtrl'
                  })
-                  .when('/services/:id', {
-                      templateUrl: 'views/services/home-service.html',
-                      controller: 'SingleServicesController',
-                      controllerAs: 'singleServicesCtrl'
+                  .when('/services/fazztsoftware', {
+                      templateUrl: 'views/services/fazztSoftware/index.html',
+                      controller: 'FazztSoftwareController',
+                      controllerAs: 'fazztSoftwareCtrl'
                   })
-
-                  .when('/services/:id/:id', {
-                      templateUrl: 'views/services/service-profile.html',
-                      controller: 'ServiceProfileController',
-                      controllerAs: 'profileCtrl'
-                  })
+                  //.when('/services/:id/:id', {
+                  //    templateUrl: 'views/services/service-profile.html',
+                  //    controller: 'ServiceProfileController',
+                  //    controllerAs: 'profileCtrl'
+                  //})
 
                  .when('/case-studies', {
                      template: '<h5>This is the case studies route<h5>'
