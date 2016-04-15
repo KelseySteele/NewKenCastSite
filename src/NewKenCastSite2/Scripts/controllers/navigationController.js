@@ -10,26 +10,26 @@
     var menus = [
             {
                 title: "Services",
-                action: "#/services",
+                action: "services",
                 submenus: [
                   {
-                      title: "Fazzt Software",
-                      template: "#/services"
+                      title: "Fazzt",
+                      action: "fazzt",
                   },
                   {
                       title: "Cinema Specific",
-                      template: "#/services"
+                      action: "cinemaspecific",
                
                   },
                   {
                       title: "Mobile Platform",
-                      template: "#/services"
-                  }
+                      action: "mobileplatform",
+                   }
                 ]
             },
             {
                 title: "Case Studies",
-                action: "#/case-studies",
+                action: "case-studies",
                 submenus: [
                   {
                       title: "Cinema",
@@ -51,7 +51,7 @@
               },
               {
                 title: "Company",
-                action: "#/company",
+                action: "company",
                 submenus: [
                   {
                       title: "About Us",
@@ -81,12 +81,12 @@
               },
               {
                   title: "Contact Us",
-                  action: "#/contact-us"
+                  action: "contact-us"
     
               },
               {
                   title: "Site Map",
-                  action: "#/site-map"
+                  action: "site-map"
               }
     ]
 
