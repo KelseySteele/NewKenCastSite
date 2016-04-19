@@ -4,6 +4,7 @@
 
     //Creates a module called KenCast
     var app = angular.module('kencast', [
+        'kencast.controllers',
         'ngSanitize',
         'ui.bootstrap',
         'ngAnimate',
@@ -15,19 +16,20 @@
         function ($stateProvider, $urlRouterProvider) {
 
         //For any unmatched url, redirect to /home
-        $urlRouterProvider.otherwise("home");
+        $urlRouterProvider.otherwise("/");
 
         $stateProvider
             .state('home', {
-                url: "",
+                url: "/",
                 views: {
-                    "viewA": {
-                        templateUrl: "views/home.html"
+                    "@": {
+                        templateUrl: "views/home.html",
+                        controller: "mainMenuCtrl as vm"
                     }
                 }
             })
 
-            .state('services', {
+            .state('home.services', {
                 url: "/services",
                 views: {
                     "viewA": {
@@ -39,7 +41,7 @@
 
 
             .state('fazzt', {
-                //abstract: "true",
+                abstract: "true",
                 url: "/services/fazzt",
                 views: {
                     "viewA": {
