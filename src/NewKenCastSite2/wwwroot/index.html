@@ -24,7 +24,6 @@
     
     <!--MyScripts-->
     <script src="app.js"></script>
-    <script src="modules.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/animation-classes.css" rel="stylesheet"/>
@@ -34,6 +33,10 @@
 
 <body ng-app="kencast">
     <!--<div ui-view></div>-->
+    <navigation-directive></navigation-directive>
+    <div ui-view="@"></div>
+    <footer-directive></footer-directive>
+
     <div class="container-fluid navigation-bar " ng-include="'views/app.html'">
         <div ui-view></div>
     </div>

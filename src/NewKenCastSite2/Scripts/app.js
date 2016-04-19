@@ -12,6 +12,11 @@
         'ngMaterial',
     ])
 
+
+    angular.module('sidenav.services', []); //contains data for services' sidenav
+    angular.module('kencast.controllers', ['sidenav.directives']); //Uses the directions from directives to display data from services
+    angular.module('sidenav.directives', ['sidenav.services']); //directions for elements within the sidenav
+
     app.config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
 
@@ -19,14 +24,22 @@
         $urlRouterProvider.otherwise("/");
 
         $stateProvider
-            .state('home', {
-                url: "/",
+            .state('app', { //sets up the empty space between the nav bar and the footer
+                abstract: true,
+                url: '/',
                 views: {
-                    "@": {
-                        templateUrl: "views/home.html",
-                        controller: "mainMenuCtrl as vm"
+                    'content': { 
+                        template: '<div ui-view></div>'
                     }
                 }
+             })
+            
+            
+            .state('app.home', {
+                url: "/",
+                templateUrl: 'views/home.html',
+                controller: 'carouselController'
+            
             })
 
             .state('home.services', {
@@ -198,7 +211,6 @@
 
     }]);
  
-
 
 
 
