@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sidenav.directives')
+        .module('kencast.directives')
         .directive('menuLink', function () {
             return {
                 scope: {

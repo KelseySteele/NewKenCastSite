@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sidenav.services', []); //contains data for services' sidenav
-    angular.module('kencast.controllers', ['sidenav.directives']); //Uses the directions from directives to display data from services
-    angular.module('sidenav.directives', ['sidenav.services']); //directions for elements within the sidenav
+    angular.module('kencast.services', []); //contains data for services' sidenav
+    angular.module('kencast.controllers', ['kencast.directives']); //Uses the directions from directives to display data from services
+    angular.module('kencast.directives', ['kencast.services']); //directions for elements within the sidenav
 })();

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sidenav.services')
+    angular.module('kencast.services')
         .factory('servicesMenu', [
             '$location', //keeps track of the url in browser
             '$rootScope', //says this is part of the main model/set of data

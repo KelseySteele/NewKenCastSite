@@ -1,7 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('sidenav.directives')
+    angular.module('kencast.directives')
         .directive('menuToggle', ['$timeout', function ($timeout) {//Shows & hides menu items when there are sub-items
             return {
                 scope: {

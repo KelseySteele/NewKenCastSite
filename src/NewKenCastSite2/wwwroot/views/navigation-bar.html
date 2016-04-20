@@ -17,19 +17,19 @@
                     <img src="../images/kencastlogo.jpg" />
                 </a>
             </div>
-            <div ng-controller="NavigationController as navigationCtrl">
+            <div ng-controller="navigationController">
                 
                 <div class="container-fluid navbar-container">          
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navBar">
                         <ul class="menu nav navbar-nav  kencast-text">                            
-                            <li class="dropdown" ng-repeat="menu in navigationCtrl.menus">
-                                <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="{{menu.action}}">{{menu.title}}</a>
-                                <ul ng-if="menu.submenus" class="sub-menu dropdown-menu">
+                            <li class="dropdown" ng-repeat="menuItem in NavigationController.menuItems track by $index" ng-class= "{'active': menuItem && menuItem.active }">
+                                <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="{{menuItem.getRouteSref(menuItem)}}">{{menuItem.heading}}</a>
+                                <!--<ul ng-if="menu.submenus" class="sub-menu dropdown-menu">
                                     <li ng-repeat="submenu in menu.submenus">
                                         <a ui-sref="{{submenu.action}}">{{submenu.title}}</a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </li>
                         </ul>
                     </div>
