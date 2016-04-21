@@ -7,60 +7,93 @@
     angular.module('kencast.directives', ['kencast.services']); //directions for elements within the sidenav
 
     //Creates a module called KenCast
-    var app = angular.module('kencast', [
-        'kencast.services',
+    angular.module('kencast', [
         'kencast.controllers',
-        'ngSanitize',
-        'ui.bootstrap',
         'ngAnimate',
+        'ui.bootstrap',
         'ui.router',
-        'ngMaterial'        
+        'ngMaterial',
+        'ngAria'
     ])
 
-
-
-
-    app.config(['$locationProvider','$stateProvider', '$urlRouterProvider',
-        function ($locationProvider, $stateProvider, $urlRouterProvider) {
-            $locationProvider.html5Mode(false);
+    .config(['$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
         //For any unmatched url, redirect to /home
-        $urlRouterProvider
-                .when('/', '/home')
-                .otherwise('/home');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('app', { //sets up the empty space between the nav bar and the footer
-                abstract: true,
                 url: '/',
                 views: {
-                    'content': { 
-                        template: '<div ui-view></div>'
+                    '@': { 
+                        templateUrl: 'views/app.html',
+                        controller: 'NavigationController as vm'
                     }
                 }
-             })
-                        
+            })
+
             .state('app.home', {
-                url: "/home",
-                templateUrl: 'views/home.html',
-                controller: 'carouselController'            
+                url: 'home',
+                views: {
+                    'content@app': {
+                        templateUrl: 'views/home.html',
+                        //controller: 'CarouselController as carouselCtrl'
+                    }
+                }
+
             })
 
             .state('app.services', {
-               url: "/services",
-               templateUrl: "views/services/services.html"
-            }) //end of services states
+                url: '/services',
+                views: {
+                    'content@app': {
+                        templateUrl: 'views/services/services.html',
+                        controller: 'ServicesController as servicesCtrl'
+                    }
+                }
+            })//end of services states
+
 
             .state('app.case-studies', {
-                url: "/case-studies",
-                template: "This is the case study state."
-            }) //end of case studies states
+                url: '/case-studies',
+                views: {
+                    'content@app': {
+                        template: "This is the case study state."
+                    }
+                }
+            })//end of case-studies states
 
             .state('app.company', {
-                url: "/company",
-                template: "This is the company state."
-            }) //end of company states
+                url: 'company',
+                views: {
+                    'content@app': {
+                        template: "This is the company state."
+                    }
+                }
+            })//end of company states
 
-    }]);
+        }])
+
+    //take all whitespace out of string
+    .filter('nospace', function () {
+        return function (value) {
+            return (!value) ? '' : value.replace(/ /g, '');
+        };
+    })
+    //replace uppercase to regular case
+    .filter('humanizeDoc', function () {
+        return function (doc) {
+            if (!doc) return;
+            if (doc.type === 'directive') {
+                return doc.name.replace(/([A-Z])/g, function ($1) {
+                    return '-' + $1.toLowerCase();
+                });
+            }
+        
+            return doc.label || doc.name;
+        };
+    });
+
 
 })();
 

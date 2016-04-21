@@ -1,23 +1,44 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('kencast.controllers')
-        .controller('navigationController', ['$state', 'navigationService', function ($state, navigationService){
-            var vm = this;
-            vm.menuItems = navigationService.menuItems; 
+    angular
+        .module('kencast.controllers')
+        .controller('NavigationController', [
+          '$rootScope',
+          '$state',
+          '$timeout',
+          '$location',
+          'navigationMenu',
 
-            vm.getRouteSref = function (menuItem) {
-                if (!menuItem) {
-                    menuItem = vm.menuItems[0];
-                }
+        function ($rootScope, $state, $timeout, $location, navigationMenu) {
 
-                return $state.href(menuItem.route);
+            var vm = this; //vm is the alias for this controller
 
+            //functions for menu-link and menu-toggle
+            vm.isOpen = isOpen;//nothing is opened
+            vm.toggleOpen = toggleOpen;//or toggled
+            vm.autoFocusContent = false;//or in the body of the template
+            vm.navigationMenu = navigationMenu; //data stored within the factory/service called navigationMenu
+
+            vm.status = {
+                isFirstOpen: true,
+                isFirstDisabled: false
             };
+
+
+            function isOpen(section) {
+                return navigationMenu.isSectionSelected(section);
+            }
+
+            function toggleOpen(section) {
+                navigationMenu.toggleSelectSection(section);
+            }
 
         }]);
 
-
 })();
+
+
+
 
 

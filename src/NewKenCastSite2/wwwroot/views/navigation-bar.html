@@ -8,35 +8,35 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <p class="navbar-text visible-xs-inline-block">Text Here</p>
+            <p class="navbar-text visible-xs-inline-block">Innovative Content Delivery Solutions</p>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
             <div class="logo col-md-2">
-                <a href="#/home" ui-sref="home">
+                <a ui-sref='home'>
                     <img src="../images/kencastlogo.jpg" />
                 </a>
             </div>
-            <div ng-controller="navigationController">
-                
+            <!--<div ng-controller="NavigationController as vm">-->                
                 <div class="container-fluid navbar-container">          
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navBar">
                         <ul class="menu nav navbar-nav  kencast-text">                            
-                            <li class="dropdown" ng-repeat="menuItem in NavigationController.menuItems track by $index" ng-class= "{'active': menuItem && menuItem.active }">
-                                <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="{{menuItem.getRouteSref(menuItem)}}">{{menuItem.heading}}</a>
-                                <!--<ul ng-if="menu.submenus" class="sub-menu dropdown-menu">
-                                    <li ng-repeat="submenu in menu.submenus">
-                                        <a ui-sref="{{submenu.action}}">{{submenu.title}}</a>
-                                    </li>
-                                </ul>-->
-                            </li>
+                            <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
+                                ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                                <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                                    id="heading_{{ section.name | nospace  }}">
+                                    {{section}}
+                                </h2>
+                                <menu-link section="section" ng-if="section.type === 'link'">{{section.header}}</menu-link>
+                                <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                            </li> 
                         </ul>
                     </div>
                     <div class="col-md-1"></div>
-                    <ul class="nav navbar-nav navbar-right"></ul>
+                    <!--<ul class="nav navbar-nav navbar-right"></ul>-->
                 </div>
-            </div>
+            <!--</div>-->
         </div>
 <!-- /.navbar-collapse -->
     </nav>
