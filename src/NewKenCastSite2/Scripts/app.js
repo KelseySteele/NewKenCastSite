@@ -28,6 +28,21 @@
                     controller: 'ServicesController as servicesCtrl'
                 })
 
+                .state('fazzt', {
+                     url: '/services/fazzt',
+                     templateUrl: '/views/services/fazzt/index.html',                    
+                })
+
+                .state('mobile-platform', {
+                     url: '/services/mobile-platform',
+                     templateUrl: '/views/services/mobilePlatform/index.html',
+                })
+
+                .state('cinema-specific', {
+                     url: '/services/cinema-specific',
+                     templateUrl: '/views/services/cinemaSpecific/index.html'
+                 })
+
                 .state('case-studies', {
                     url: '/case-studies',
                     templateUrl: '/views/case-studies/case-studies.html'
