@@ -17,24 +17,21 @@
                     <img src="../images/kencastlogo.jpg" />
                 </a>
             </div>
-            <div ng-controller="NavigationController as navigationCtrl">                
+            <!--<div ng-controller="NavigationController as navigationCtrl">-->                
                 <div class="container-fluid navbar-container">          
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navBar">
                         <ul class="menu nav navbar-nav  kencast-text">                            
-                            <li ng-repeat="section in navigationCtrl.menu.sections">
-                                <h2>
-                                    Services
-                                    {{section.heading}}
-                                </h2>
-                            </li> 
+                            <li ui-sref-active="active"><a ui-sref="services">Services</a></li>
+                            <li ui-sref-active="active"><a ui-sref="case-studies">Case Studies</a></li> 
+                            <li ui-sref-active="active"><a ui-sref="company">Company</a></li>
                         </ul>
                     </div>
                     <div class="col-md-1"></div>
                     <!--<ul class="nav navbar-nav navbar-right"></ul>-->
                 </div>
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 <!-- /.navbar-collapse -->
     </nav>
 </div>
