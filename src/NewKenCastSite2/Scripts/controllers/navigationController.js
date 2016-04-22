@@ -1,42 +1,30 @@
-﻿(function () {
-    'use strict';
+﻿//(function () {
+//    'use strict';
 
-    angular
-        .module('kencast.controllers')
-        .controller('NavigationController', [
-          '$rootScope',
-          '$state',
-          '$timeout',
-          '$location',
-          'navigationMenu',
+//    angular
+//        .module('kencast')
+//        .controller('NavigationController', function () {
 
-        function ($rootScope, $state, $timeout, $location, navigationMenu) {
+//            var menu = this;
 
-            var vm = this; //vm is the alias for this controller
+//            //menu.toggle = true;
 
-            //functions for menu-link and menu-toggle
-            vm.isOpen = isOpen;//nothing is opened
-            vm.toggleOpen = toggleOpen;//or toggled
-            vm.autoFocusContent = false;//or in the body of the template
-            vm.navigationMenu = navigationMenu; //data stored within the factory/service called navigationMenu
+//            menu.sections = [
+//                {heading:'KenCast', url: '/views/home.html'},
+//                {heading:'Services', url: '/views/services/services.html'},
+//                {heading: 'Case Studies', url: '/views/case-studies/case-studies.html'},
+//                {heading: 'Company', url: '/views/company/company.html'}
+//            ]
 
-            vm.status = {
-                isFirstOpen: true,
-                isFirstDisabled: false
-            };
+//            //menu.addSection = function () {
+//            //    menu.sections.push({ heading: sections.heading });
+//            //    menu.heading = "";
 
+//            //};
 
-            function isOpen(section) {
-                return navigationMenu.isSectionSelected(section);
-            }
+//        });
 
-            function toggleOpen(section) {
-                navigationMenu.toggleSelectSection(section);
-            }
-
-        }]);
-
-})();
+//})();
 
 
 

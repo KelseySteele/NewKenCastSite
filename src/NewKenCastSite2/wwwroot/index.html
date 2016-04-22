@@ -26,13 +26,15 @@
     <script src="app.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/animation-classes.css" rel="stylesheet"/>
-   
+    <link href="css/animation-classes.css" rel="stylesheet"/>   
 </head>
 
 
 <body ng-app="kencast">
-    <div class="container-fluid navigation-bar " ng-include="'views/app.html'">
-    </div>
+
+    <navigation-directive></navigation-directive>
+        <main ui-view></main>
+    <footer-directive></footer-directive>
+
 </body>
 </html>

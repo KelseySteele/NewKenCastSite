@@ -17,26 +17,23 @@
                     <img src="../images/kencastlogo.jpg" />
                 </a>
             </div>
-            <!--<div ng-controller="NavigationController as vm">-->                
+            <div ng-controller="NavigationController as navigationCtrl">                
                 <div class="container-fluid navbar-container">          
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navBar">
                         <ul class="menu nav navbar-nav  kencast-text">                            
-                            <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
-                                ng-class="{'parentActive' : vm.isSectionSelected(section)}">
-                                <h2 class="menu-heading" ng-if="section.type === 'heading'"
-                                    id="heading_{{ section.name | nospace  }}">
-                                    {{section}}
+                            <li ng-repeat="section in navigationCtrl.menu.sections">
+                                <h2>
+                                    Services
+                                    {{section.heading}}
                                 </h2>
-                                <menu-link section="section" ng-if="section.type === 'link'">{{section.header}}</menu-link>
-                                <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
                             </li> 
                         </ul>
                     </div>
                     <div class="col-md-1"></div>
                     <!--<ul class="nav navbar-nav navbar-right"></ul>-->
                 </div>
-            <!--</div>-->
+            </div>
         </div>
 <!-- /.navbar-collapse -->
     </nav>

@@ -1,5 +1,4 @@
 ﻿<!--ui bootstrap carousel-->
-<div class="row" ng-controller="CarouselController as carouselCtrl">
     <uib-carousel interval="4000" no-wrap="false">
         <uib-slide ng-repeat="slide in carouselCtrl.slides" active="slide.active">
             <img ng-src="{{slide.image}}" style="margin:auto;" class="img-responsive" height="480px">            
@@ -9,4 +8,3 @@
                 </div>       
         </uib-slide>
     </uib-carousel>
-</div>
