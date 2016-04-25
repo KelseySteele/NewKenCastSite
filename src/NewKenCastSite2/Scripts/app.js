@@ -24,13 +24,37 @@
                 })
                 .state('services', {
                     url: '/services',
-                    templateUrl: '/views/services/services.html',
+                    templateUrl: '/views/services/index.html',
                     controller: 'ServicesController as servicesCtrl'
                 })
                         .state('fazzt', {
                             url: '/services/fazzt',
                             templateUrl: '/views/services/fazzt/index.html'
                         })
+
+                            .state('fazzt.overview', {
+                                templateUrl: '/views/services/fazzt/overview.html'
+                            })
+
+                            .state('fazzt.applications', {
+                                templateUrl: '/views/services/fazzt/applications.html'
+                            })
+
+                            .state('fazzt.equipment', {
+                                templateUrl: '/views/services/fazzt/equipment.html'
+                            })
+
+                            .state('fazzt.faq', {
+                                templateUrl: '/views/services/fazzt/faq.html'
+                            })
+
+                            .state('fazzt.flowchart', {
+                                templateUrl: '/views/services/fazzt/flowchart.html'
+                            })
+
+                            .state('fazzt.options', {
+                                templateUrl: '/views/services/fazzt/options.html'
+                            })
 
                         .state('cinema-specific', {
                             url: '/services/cinema-specific',
@@ -66,7 +90,6 @@
                             templateUrl: '/views/case-studies/tv-news/index.html'
                         })
 
-
                 .state('company', {
                     url: '/company',
                     templateUrl: '/views/company/index.html'
@@ -100,7 +123,6 @@
                             url: '/company/trade-shows',
                             templateUrl: '/views/company/trade-shows/index.html'
                         });
-
     }]);
 
 })();

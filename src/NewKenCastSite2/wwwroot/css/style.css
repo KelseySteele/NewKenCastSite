@@ -1,9 +1,10 @@
 ﻿/*material design components*/
  md-toolbar md-icon.md-default-theme {
-  color: #041690;
+  background-color: #041690;
+  color: white;
  }
 
-.md-toolbar h3 {
+div.md-toolbar-tools h1 {
      color: white;
  }
 
