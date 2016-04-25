@@ -17,20 +17,45 @@
                     <img src="../images/kencastlogo.jpg" />
                 </a>
             </div>
-            <!--<div ng-controller="NavigationController as navigationCtrl">-->                
+            <div ng-controller="NavigationController as navigationCtrl">                
                 <div class="container-fluid navbar-container">          
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navBar">
                         <ul class="menu nav navbar-nav  kencast-text">                            
-                            <li ui-sref-active="active"><a ui-sref="services">Services</a></li>
-                            <li ui-sref-active="active"><a ui-sref="case-studies">Case Studies</a></li> 
-                            <li ui-sref-active="active"><a ui-sref="company">Company</a></li>
+                            <li ui-sref-active="active" class="dropdown">
+                                <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="fazzt">Fazzt</a></li>
+                                    <li><a ui-sref="cinema-specific">Cinema Specific</a></li>
+                                    <li><a ui-sref="mobile-platform">Mobile Platform</a></li>
+                                </ul>
+                            </li>
+                            <li ui-sref-active="active" class="dropdown">
+                                <a ui-sref="case-studies" class="dropdown-toggle" data-toggle="dropdown">Case Studies</a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="cinema">Cinema</a></li>
+                                    <li><a ui-sref="public-safety-and-military">Public Safety and Military</a></li>
+                                    <li><a ui-sref="retail">Retail</a></li>
+                                    <li><a ui-sref="tv-news">TV/News</a></li>
+                                </ul>
+                            </li> 
+                            <li ui-sref-active="active" class="dropdown">
+                            <a ui-sref="company" class="dropdown-toggle" data-toggle="dropdown">Company</a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="about-us">About Us</a></li>
+                                    <li><a ui-sref="careers">Careers</a></li>
+                                    <li><a ui-sref="clients-and-testimonials">Clients and Testimonials</a></li>
+                                    <li><a ui-sref="management">Management</a></li>
+                                    <li><a ui-sref="new-at-kencast">New at KenCast</a></li>
+                                    <li><a ui-sref="trade-shows">Trade Shows</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-1"></div>
                     <!--<ul class="nav navbar-nav navbar-right"></ul>-->
                 </div>
-            <!--</div>-->
+            </div>
         <!--</div>-->
 <!-- /.navbar-collapse -->
     </nav>
