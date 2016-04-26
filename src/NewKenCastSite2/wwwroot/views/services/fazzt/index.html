@@ -1,24 +1,37 @@
-﻿<md-toolbar class="md-hue-2">
-    <div class= "row md-toolbar-tools">
-        <div class="col-md-1"></div>
-        <h1 class="col-md-10">
-            Services: Fazzt
-        </h1>
-        <div class="col-md-1"></div>
-        <!--<span flex></span>-->
+﻿      
+<md-toolbar class="md-hue-2">
+   <div class="row md-toolbar-tools">
+      <div class="col-md-1"></div>
+              <h1 class="col-md-10">
+                  Services: Fazzt
+              </h1>
+      <div class="col-md-1"></div>
+     <!--<span flex></span>-->
     </div>
 </md-toolbar>
-
 <div class="row">
     <div class="col-md-1"></div>
-    <div class= "col-md-10">
-        <p>This is the layout for the Fazzt section</p>
-        <br>
-        <a ui-sref="fazzt.overview">Overview</a>
-        <a ui-sref="fazzt.applications">Applications</a>
-        <div ui-view></div>
+    <div class="col-md-10">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z1" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-content role="navigation">
+                <ul class="side-menu">
+                    <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
+                        ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                        <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                            id="heading_{{ section.name }}">
+                            {{section}}
+                        </h2>
+                        <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                        <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                    </li>
+                </ul>
+            </md-content>
+        </md-sidenav>
+        <md-content>
+            <div ui-view></div>
+        </md-content>
     </div>
-    <div class="col-md-1"></div>
 </div>
+
 
 

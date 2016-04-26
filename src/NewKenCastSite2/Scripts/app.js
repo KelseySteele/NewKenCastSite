@@ -29,7 +29,8 @@
                 })
                         .state('fazzt', {
                             url: '/services/fazzt',
-                            templateUrl: '/views/services/fazzt/index.html'
+                            templateUrl: '/views/services/fazzt/index.html',
+                            controller: 'sideMenuCtrl as vm'
                         })
 
                             .state('fazzt.overview', {
