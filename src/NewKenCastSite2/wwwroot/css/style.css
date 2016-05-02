@@ -25,6 +25,11 @@ main.ng-scope {
     text-align: left;
 }
 
+div.col-md-10.row.flex {
+    position: fixed;
+    height: 100%;
+}
+
 /*.side-menu {
     border-right: solid;
     border-right-color: #666666;
@@ -93,7 +98,9 @@ main.ng-scope {
 md-sidenav {
   overflow: visible;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
-  height: 100%  
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 .side-menu, .side-menu ul {
   list-style: none;
