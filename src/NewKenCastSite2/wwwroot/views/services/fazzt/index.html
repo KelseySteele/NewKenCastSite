@@ -1,25 +1,26 @@
-﻿     
-<md-toolbar class="md-hue-2">
-   <div class="row md-toolbar-tools">
-       <div class="col-md-1"></div> 
-              <h1 class="col-md-10">
-                  Services: Fazzt
-              </h1>
-      <div class="col-md-1"></div>
-     <!--<span flex></span>-->
-    </div>
-</md-toolbar>
-<div>
-    <div class="col-md-1"></div> 
-    <div class="col-md-10 row" fill-height flex>
-            <md-sidenav class="md-sidenav-left side-nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-disable-backdrop md-whiteframe="4">
-                
-                <md-content layout= "column" layout-padding><!--role="navigation"-->
-                    
+﻿
+    <md-toolbar class="md-hue-2">
+        <div class="row md-toolbar-tools">
+            <div class="col-md-1"></div>
+            <h1 class="col-md-10">
+                Services: Fazzt
+            </h1>
+            <div class="col-md-1"></div>
+            <!--<span flex></span>-->
+        </div>
+    </md-toolbar>
+    <div class="containerDiv">
+        <div layout="horizontal" style="height: inherit">
+            <!--fill-height-->
+            <md-sidenav class="md-sidenav-left side-nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-disable-backdrop md-whiteframe="4" >
+
+                <md-content layout="column" layout-padding>
+                    <!--role="navigation"-->
+
                     <ul class="side-menu">
                         <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
                             ng-class="{'parentActive' : vm.isSectionSelected(section)}">
-                            <h2 class="menu-heading" ng-if="section.type === 'heading'" 
+                            <h2 class="menu-heading" ng-if="section.type === 'heading'"
                                 id="heading_{{ section.name }}">
                                 {{section}}
                             </h2>
@@ -30,14 +31,13 @@
                 </md-content>
 
             </md-sidenav>
-            <md-content class="sub-menu-body" layout= "column" layout-fill" md-component-id="right" flex>
+
+            <md-content class="sub-menu-body" layout="column" layout-fill" md-component-id="right" flex>
                 <div layout-padding>
                     <div ui-view></div>
                 </div>
             </md-content>
+        </div>
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1"></div>
 </div>
-
-
-

@@ -1,7 +1,18 @@
-﻿/*material design components*/
+﻿
+.containerDiv {
+    height: 100%;
+    position: absolute;
+}
+
+.containerDiv.md-sidenav.md-sidenav-left {
+    height: inherit 100%;
+}
+
+/*material design components*/
  md-toolbar md-icon.md-default-theme {
   background-color: #041690;
   color: white;
+  position: fixed;
  }
 
 div.md-toolbar-tools h1 {
@@ -25,7 +36,7 @@ main.ng-scope {
     text-align: left;
 }
 
-div.col-md-10.row.flex {
+div.col-md-8.row.flex {
     position: fixed;
     height: 100%;
 }
