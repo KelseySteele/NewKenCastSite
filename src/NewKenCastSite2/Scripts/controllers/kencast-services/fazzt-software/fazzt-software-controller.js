@@ -15,27 +15,27 @@
 
     var fazztViews = [
                 {
-                    view: 'views/services/fazztSoftware/applications.html',
+                    view: 'views/services/fazzt/applications.html',
                     id: 'applications'
                 },
                 {
-                    view: 'views/services/fazztSoftware/equipment.html',
+                    view: 'views/services/fazzt/equipment.html',
                     id: 'equipment'
                 },
                 {
-                    view: 'views/services/fazztSoftware/faq.html',
+                    view: 'views/services/fazzt/faq.html',
                     id: 'faq'
                 },
                 {
-                    view: 'views/services/fazztSoftware/flowchart.html',
+                    view: 'views/services/fazzt/flowchart.html',
                     id: 'flowchart'
                 },
                 {
-                    view: 'views/services/fazztSoftware/options.html',
+                    view: 'views/services/fazzt/options.html',
                     id: 'options'
                 },
                 {
-                    view: 'views/services/fazztSoftware/overview.html',
+                    view: 'views/services/fazzt/overview.html',
                     id: 'overview'
                 }
     ]

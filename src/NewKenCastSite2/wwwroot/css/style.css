@@ -1,57 +1,54 @@
 ﻿
-.containerDiv {
+ html body.ng-scope div.col-md-10 { /*Extends Service's sidenav to the bottom of the page*/
     height: 100%;
-    position: absolute;
 }
 
-.containerDiv.md-sidenav.md-sidenav-left {
-    height: inherit 100%;
+a.dropdown-toggle {
+    display: inline;
+    float: right;
 }
 
-/*material design components*/
- md-toolbar md-icon.md-default-theme {
-  background-color: #041690;
-  color: white;
-  position: fixed;
- }
+.close {
+    float: right;
+    padding: 8px;
+    font-size: 16px;
+}
 
+div.ng-scope {
+    height: 100%;
+}
+
+/*Services Section*/
+
+md-sidenav.md-sidenav-left.md-closed.ng-isolate-scope.md-locked-open {
+    height: inherit;
+}
+
+/*Fazzt Section*/
 div.md-toolbar-tools h1 {
      color: white;
  }
 
-.main-section {
-    position: absolute;
+.across {
+   padding-top: 30px;
+   padding-bottom: 30px;
+   display: inline;  
 }
 
-main.ng-scope {
-    height: 100%;
-}
-
-.side-nav, .sub-menu-body  {
+.clear {
+    clear: both;
+    margin: 10px;
+    display: block;
     float: left;
-    height: 100%;
 }
 
-.md-button.span.ng-binding {
-    text-align: left;
-}
+/*Navigation bar*/
 
-div.col-md-8.row.flex {
-    position: fixed;
-    height: 100%;
-}
-
-/*.side-menu {
-    border-right: solid;
-    border-right-color: #666666;
-    border-right-width: 1.8px;
-    height: 100%;
-}*/
-
-/*--navigation bar--*/
  .logo {
    padding-top: 30px;
    padding-bottom: 30px;
+   /*clear: left;*/
+   display: inline;
 }
 
 .kencast-text {
@@ -81,12 +78,17 @@ div.col-md-8.row.flex {
 }
 
 .kencast-footer {
-   position:fixed;
+   position:relative;
    left:0px;
    bottom:0px;
    height:30px;
    width:100%;
    background:#999;
+}
+
+.clearfooter {
+    height: 30px;
+    clear: both;
 }
 
 .newsletter {
@@ -112,15 +114,17 @@ md-sidenav {
   position: absolute;
   top: 0;
   bottom: 0;
+  height: 100%;
 }
 .side-menu, .side-menu ul {
   list-style: none;
   padding: 0;
   margin-top: 0;
+  height: 100%;
 }
 
 .side-menu .md-button.active {
-  color: deeppink;
+  color: blue;
 }
 
 .side-menu .menu-toggle-list a.md-button {

@@ -1,14 +1,13 @@
 ﻿<div class="row homepage-pad">
-    <div class="col-md-1"></div>
-    <h2 class="col-md-10">New at KenCast</h2>
-    <div class="col-md-1"></div>
+    <h2>New at KenCast</h2>
+    <!--<div class="col-md-1"></div>-->
 </div>
-<div ng-controller="NewHomepageController as newHomepageCtrl" class="row">
-    <div class="col-md-1"></div>
+<div class="row" ng-controller="NewHomepageController as newHomepageCtrl" >
+    <!--<div class="col-md-1"></div>-->
     <div ng-repeat="section in newHomepageCtrl.sections" class="col-md-3">
         <img ng-src="{{section.image}}" />
         <h3>{{section.title}}</h3>
         <p>{{section.text}}</p>
     </div>
-    <div class="col-md-2"></div>
+    <!--<div class="col-md-2"></div>-->
 </div>

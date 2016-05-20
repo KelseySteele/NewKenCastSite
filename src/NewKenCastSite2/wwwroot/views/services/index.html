@@ -1,27 +1,22 @@
-﻿<div class="container-fluid">
-    <div class="row homepage-pad">
-        <div class="col-md-1"></div>
-        <h2 class="col-md-10">Services</h2>
-        <div class="col-md-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <p>KenCast delivers large files and video streams to thousands of locations all over the world. Our core product is our Fazzt software; it is at the heart of all of our content network delivery services. Our services are customizable and we pride ourselves in making our program work for your industry.
-             We are Hollywood's choice when it comes to delivering movies to thousands of theatres. Our cinema specific content delivery service is expanding into Europe, India, and Latin America.</p>
-            <p>We look forward to working with you soon!</p>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
+﻿<!--<div class="container-fluid">-->
+    <!--<div class="row homepage-pad">
+        <h2>Services</h2>
+    </div>-->
+
     <div ng-controller="ServicesController as servicesCtrl" class="row">
-        <div class="col-md-1"></div>
-        <div ng-repeat="service in servicesCtrl.services" class="col-md-3 logo">
+        <div>
+            <h2>Services</h2>
+        </div>
+        <p>For the last two decades, KenCast has developed ultra-reliable software for multicast content, often global, and often encrypted or in DRM format. KenCast understands that such content is useless if even a single bit is wrong.</p>
+        <p>Our secure and efficient technology ensures delivery of live video streams and very large encrypted files, often to thousands of sites. KenCast technology is used in applications in the entertainment and media industries, military, homeland security, public safety, and banking and finance, where flawless delivery is often the only option for these applications.</p>
+
+        <div ng-repeat="service in servicesCtrl.services" class="col-md-3 across">
             <a ng-href="#/services/{{service.state}}" >
-                <img ng-src="{{service.image}}" />
+                <img class="clear" ng-src="{{service.image}}" />
                 <h3>{{service.title}}</h3>
                 <p>{{service.text}}</p>
             </a>
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
+<!--</div>-->

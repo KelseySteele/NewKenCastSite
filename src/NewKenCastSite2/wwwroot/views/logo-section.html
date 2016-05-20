@@ -1,13 +1,10 @@
 ﻿<div class="row homepage-pad">
-    <div class="col-md-1"></div>
-    <h2 class="col-md-10">Our Customers</h2>
-    <div class="col-md-1"></div>
+    <h2>Our Customers</h2>
 </div>
 
-<div class="row" ng-controller="LogoController as logoCtrl">
-    <div class="col-md-1"></div>
-    <div class= "col-md-2 logo" ng-repeat="logo in logoCtrl.logos">
+<div class= "row" ng-controller="LogoController as logoCtrl">
+    <div class= "across" ng-repeat="logo in logoCtrl.logos">
         <a href="logo.link"><img ng-src="{{logo.image}}"/></a>
     </div>
-    <div class="col-md-3"></div>
+    <!--<div class="col-md-3"></div>-->
 </div>

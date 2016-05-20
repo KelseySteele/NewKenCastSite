@@ -13,15 +13,15 @@
     var services = [
                 {
                     state: 'fazzt',
-                    title: 'Fazzt Software',
+                    title: 'Fazzt',
                     image: '/images/homepage-placeholder.jpg',
-                    text: 'Fazzt Software is involved in all of our content network delivery services. Fazzt has delivered content for fire departments, TV/News stations, franchises, and movie theatres.'
+                    text: 'The KenCast Fazzt® Digital Delivery Software enables efficient, reliable, and secure multicast and unicast distribution of large files and live streams over terrestrial and satellite networks.'
                 },
                 {
-                    state: 'cinema-specific',
-                    title: 'Cinema Specific',
+                    state: 'digital-cinema',
+                    title: 'Digital Cinema',
                     image: '/images/homepage-placeholder.jpg',
-                    text: 'When it comes to content delivery, we know the movie industry has specific requirements, like the ability to deliver and recieve DCPs (Digital Cinema Packages). That is why we have produced a cutting edge Fazzt server software program to work specifically for digital cinema.'
+                    text: 'Working with movie theater chains and Hollywood’s leading studios such as Sony Pictures, Warner Bros Pictures and NBC Universal, KenCast provides a cutting edge Fazzt server software program to work specifically for digital cinema.'
                 },
                 {
                     state: 'mobile-platform',

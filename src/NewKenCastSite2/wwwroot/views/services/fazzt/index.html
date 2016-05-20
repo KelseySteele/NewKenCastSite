@@ -1,43 +1,33 @@
 ﻿
-    <md-toolbar class="md-hue-2">
-        <div class="row md-toolbar-tools">
-            <div class="col-md-1"></div>
-            <h1 class="col-md-10">
-                Services: Fazzt
-            </h1>
-            <div class="col-md-1"></div>
-            <!--<span flex></span>-->
-        </div>
-    </md-toolbar>
-    <div class="containerDiv">
-        <div layout="horizontal" style="height: inherit">
-            <!--fill-height-->
-            <md-sidenav class="md-sidenav-left side-nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-disable-backdrop md-whiteframe="4" >
+    <div class="fill-height">
+    <div layout="row">
+        <!--fill-height-->
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
+            <div layout="column">
+                <!--role="navigation"-->
+                <close-sidenav></close-sidenav>
+                <ul class="side-menu"  layout-padding>
+                    <li ng-repeat="section in vm.menu.sections" class="parent-list-item" ng-if="section.service === 'fazzt'"
+                        ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                        <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                            id="heading_{{ section.name }}">
+                            {{section}}
+                        </h2>
+                        <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                        <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                    </li>
+                </ul>
+            </div>
+        </md-sidenav>
 
-                <md-content layout="column" layout-padding>
-                    <!--role="navigation"-->
-
-                    <ul class="side-menu">
-                        <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
-                            ng-class="{'parentActive' : vm.isSectionSelected(section)}">
-                            <h2 class="menu-heading" ng-if="section.type === 'heading'"
-                                id="heading_{{ section.name }}">
-                                {{section}}
-                            </h2>
-                            <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
-                            <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
-                        </li>
-                    </ul>
-                </md-content>
-
-            </md-sidenav>
-
-            <md-content class="sub-menu-body" layout="column" layout-fill" md-component-id="right" flex>
-                <div layout-padding>
-                    <div ui-view></div>
-                </div>
-            </md-content>
-        </div>
-        <div class="col-md-1"></div>
+        <md-content layout="column" md-component-id="right">
+            <div class="sub-menu-body">
+                <div ui-view></div>
+                <md-button ng-click="vm.toggleLeft()"
+                           class="md-primary" hide-gt-md>
+                    Fazzt Menu
+                </md-button>
+            </div>
+        </md-content>
     </div>
 </div>
