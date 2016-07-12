@@ -1,1 +1,20 @@
-﻿<p>Fazzt FAQ</p>
+﻿<div class="servicesBody">
+    <h2>Fazzt FAQ</h2>
+    <!--Works, but does not close all - Kelsey's original code with glyphicon-->
+    <uib-accordion>
+        <uib-accordion-group close-others="true" ng-repeat="group in groups | filter: {service: 'fazzt'}" is-open="status.open">
+            <div uib-accordion-heading class="accordionHeader" ng-click="closeGroups">
+                {{group.question}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            </div>
+            <div ng-bind-html="group.answer">
+                {{group.answer}}
+            </div>
+        </uib-accordion-group>
+    </uib-accordion>
+
+    <md-button ng-click="vm.toggleLeft()"
+               hide-gt-md>
+        <!--class="md-primary"-->
+        Fazzt Menu
+    </md-button>
+</div>

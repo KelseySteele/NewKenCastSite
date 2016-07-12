@@ -2,6 +2,9 @@
  html body.ng-scope div.col-md-10 { /*Extends Service's sidenav to the bottom of the page*/
     height: 100%;
 }
+ a:hover {
+     text-decoration:none;
+ }
 
 a.dropdown-toggle {
     display: inline;
@@ -18,16 +21,254 @@ div.ng-scope {
     height: 100%;
 }
 
+md-card.introCards {
+   max-width: 360px;
+}
+
+.intro {
+    padding: 15px
+}
+
+h2 {
+    color: #263F75;
+}
+
+a{
+    color: #263F75;
+}
+
+.homepage-pad {
+    padding-top:60px;
+    padding-left: 10px;
+}
+a:active {
+    color: #666666;
+}
+
+/*homepage*/
+/*NavBar*/
+div md-toolbar.navbar{
+    background-color: white;
+}
+
+div.md-toolbar-tools.main {
+    background-color: white;
+}
+
+div.servicesBody.ng-scope {
+    height: inherit;
+}
+
+.brand-logo a {
+    font-size: 16px;
+    color: #253250;
+    text-decoration: none;
+    white-space: nowrap;    
+}
+
+a.dropdown-toggle {
+    color: #666;
+}
+
+a.dropdown-toggle:hover {
+    color: #041690;
+}
+
+.navigationContainer {
+    align-items: center; 
+}
+/*Video Player*/
+.videogular-container {
+	width: 100%;
+	height: 320px;
+	margin: 30px 0 30px 0;
+	overflow: hidden;
+    float: left;
+}
+
+/*Applications Animation from "fade in" css of https://docs.angularjs.org/api/ngAnimate */
+/*Application Cards*/
+/* from: https://docs.angularjs.org/guide/animations and https://docs.angularjs.org/api/ng/directive/ngRepeat#animations */
+
+.repeated-item
+{
+    transition: all 800ms ease-in;
+    transform: scale(1);   
+}
+.repeated-item:active
+{
+    z-index: 2;
+    transition: all 500ms ease-in;
+    transform: scale(3);
+}
+
+
+
+/*record is the cards view*/
+.record {
+  display:block;
+  font-size:20px;
+}
+.profile {
+  background:black;
+  color:white;
+  font-size:100px;
+}
+.card-container {
+  position:relative;
+}
+
+.card {
+    position: relative;
+
+}
+.card.ng-move,
+.card.ng-enter,
+.card.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.card-container > .record.ng-animate {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:500px;
+  transition:0.5s linear all;
+  transform:scale(0.5);
+
+}
+
+/*Start of Animation*/
+.card.ng-enter, .card.ng-leave,
+.card.ng-anchor {
+  transition:0.5s linear all;
+  transform:scale(0.5);
+}
+.card.ng-enter {
+ transform:scale(1);
+}
+
+/*End of Animation*/
+.card.ng-enter.ng-enter-active, .card.ng-leave {
+  transform:scale(1);
+}
+.card.ng-leave.ng-leave-active {
+  visibility:hidden;
+}
+.card.ng-anchor-out {
+  background:red;
+}
+
+.card a {
+ position:absolute;
+ top:5px;
+ left:5px;
+ color: white;
+}
+/*Ripple Effect*/
+.ripple {
+  overflow: hidden;
+}
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  animation: ripple-animation 2s;
+}
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
+
+
+.cardPanel {
+    padding: 5px 20px 5px 10px;
+}
+ 
+@media (min-width: 1200px) {
+	.videogular-container {
+        width: 728px;
+		height: 409.5px;
+	}
+}
+ 
+@media (min-width: 992px) and (max-width: 1199px) {
+	.videogular-container {
+        width: 728px;
+		height: 409.5px;
+	}
+}
+ 
+@media (min-width: 768px) and (max-width: 991px) {
+	.videogular-container {
+		width: 728px;
+		height: 409.5px;
+	}
+}
+
 /*Services Section*/
+md-sidenav {
+    background-color: #263F75;
+    color: white;
+}
+md-sidenav h2 {
+    color: white;
+}
+
+/*selected section on sidenav*/
+.side-menu .md-button.active {
+    color: #a8b9e0;
+}
+md-sidenav.md-sidenav-left.md-closed.ng-isolate-scope.md-locked-open {
+    /*height: inherit;
+    width: inherit;*/
+    z-index: 2;
+} /*Not sure if this is doing anything :(*/
+
+.side-menu {
+    z-index: 2; 
+}
+
+div.md-toolbar-tools {
+    background-color: #263F75;    
+}
+
+.panel-default>.panel-heading {
+    background-color: #263F75;
+    color: white;
+}
+
+.button {
+    display: block;
+}
+/*This makes the accordion stretch across body section*/
+div.sub-menu-body {
+    width: 100%;
+}
 
 md-sidenav.md-sidenav-left.md-closed.ng-isolate-scope.md-locked-open {
-    height: inherit;
+    display: block;
+}
+
+/*Sidenav*/
+.servicesBody {
+    width: 100%;
 }
 
 /*Fazzt Section*/
 div.md-toolbar-tools h1 {
      color: white;
  }
+
 
 .across {
    padding-top: 30px;
@@ -42,20 +283,92 @@ div.md-toolbar-tools h1 {
     float: left;
 }
 
-/*Navigation bar*/
+.servicesBody {
+    margin: 18px;
+    padding: 10px; 
+}
 
+.servicesBody p {
+    font-size: 16px;
+    clear: left;
+}
+
+    .servicesBody ul {
+        font-size: 16px;
+        margin-left: 20px;
+        list-style-image: url('../images/bulletpoint.jpg');
+    }
+
+
+    div.imagesSection {
+        display: inline;
+    }
+
+    .md-card-images {
+        max-width: 300px;
+    }
+
+    .md-card-images img{
+        border-radius: 2px 2px 0 0;
+        width: 300px;
+        height: 160px;
+    }
+
+
+.accordionHeader {
+    background-color: #253250;
+    color: white;
+}
+
+    .accordion-test {
+        padding: 20px;
+        width: 780px;
+    }
+
+
+/*Flowchart*/
+.flowchartContainer {
+	width: 100% inherit;
+	height: 100%;
+	margin: 30px 0 30px 0;
+	overflow: hidden;
+    float: left;
+}
+
+/*Navigation bar*/
  .logo {
    padding-top: 30px;
    padding-bottom: 30px;
    /*clear: left;*/
    display: inline;
 }
-
+ .brand-logo a {
+     font-size: 12px;
+     padding: 10px 15px;
+ }
 .kencast-text {
     font-size: 16px;
     padding-top: 15px;
+    float: right;
+    color: #666
 }
 
+md-nav-item.dropdown {
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+md-toolbar-tools.main {
+    float: right;
+}
+
+div.main {
+    float: right;
+}
+
+.main {
+    position: relative;
+}
 .kencast-text:hover {
     color: #041690;
 }
@@ -83,7 +396,7 @@ div.md-toolbar-tools h1 {
    bottom:0px;
    height:30px;
    width:100%;
-   background:#999;
+   background:#253250;
 }
 
 .clearfooter {
@@ -123,9 +436,9 @@ md-sidenav {
   height: 100%;
 }
 
-.side-menu .md-button.active {
+/*.side-menu .md-button.active {
   color: blue;
-}
+}*/
 
 .side-menu .menu-toggle-list a.md-button {
   display: block;
@@ -141,9 +454,6 @@ md-sidenav {
   text-transform: none;
 }
 
-/*.side-menu > li {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
-}*/
 
 .md-button-toggle .md-toggle-icon.toggled {
   transform: rotateZ(180deg);
@@ -204,16 +514,6 @@ ul, li {
   padding: 0;
 }
 
-/*.menu {
-  height: 30px;
-  padding: 0 10px;
-}
-
-.menu > li {
-  display: inline-block;
-  width: 100px;
-  line-height: 30px;
-}*/
 
 .sub-menu {
   position: absolute;
@@ -247,25 +547,26 @@ li:hover .sub-menu {
     width: 20%;
     float: left;
     left: 15%;
-    margin-bottom: 20px;
-    color: black;
+    margin-top: 50px;
+    color: white;
     text-align: left;
-    padding-bottom: 50px;
-    /*margin-top: -60px;
-    position: absolute;
-    display: block;*/
+    padding-bottom: 25px;
+    font-family: 'Arial';
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.img-responsive {
+     transform-style: preserve-3d;
 }
 
 .learnMore {
-    background-color: #041690;
-    border-radius: 15px;
+    background-color: #253250;
     width: 150px;
     height: 50px;
     font-size: 20px;
     color: white;
     border: none;
-    /*float: left;*/
-    /*left: 15%;*/
     padding: 10px;
 }
 
@@ -277,9 +578,7 @@ li:hover .sub-menu {
 
 /*--Services/Products Pages--*/
 
-
 /*--Checklist Page--*/
-
 table, th , td  {
   border: none;
   border-collapse: collapse;
@@ -422,7 +721,21 @@ table tr:nth-child(even) {
     height: 360px; /*Kelsey added this*/
 }
 
-/*full width container*/
+
+
+/*desktop*/
+@media (min-width: 767px) {
+    md-card-content.setCardHeight {
+        height: 160px;
+    }
+    md-card-content.setEquipmentCardHeight {
+        height: 200px;
+    }
+        .md-card-equipment {
+        max-width: 50%;
+    }
+}
+/*tablet device*/
 @media (max-width: 767px) {
     .block {
         margin-left: -20px;
@@ -431,6 +744,19 @@ table tr:nth-child(even) {
     .carouselCaptionBox {
         margin-top: -25px;
         width: 100%;
+    }
+
+
+    /*Makes card full screen when at tablet sized screen or lower*/
+    div.card.ng-scope {
+        position: fixed;
+        z-index: 3;
+        overflow-y: hidden;
+        top:0;
+        left:0;
+        padding: 0;
+        width: 100vh;
+        height: 100vh;
     }
 }
 
@@ -442,5 +768,8 @@ table tr:nth-child(even) {
     .carouselCaptionBox {
         width: 100%;
     }
+    /*.brand-logo {
+        padding: 15px;
+    }*/
 
 }

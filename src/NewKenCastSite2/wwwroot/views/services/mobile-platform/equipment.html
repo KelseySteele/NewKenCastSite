@@ -1,1 +1,37 @@
-﻿<p>Mobile Platform equipment</p>
+﻿<div class="servicesBody">
+    <h2>Mobile Platform Equipment</h2>
+    <div layout="row" ><!--layout-xs="column"-->
+        <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
+        <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'mobileplatform'}" class="md-card-equipment">
+            <!--flex-md="20"-->
+            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" flex-offset-gt-sm="20" flex-offset-xs="99">
+                <div>
+                    <img ng-src="/images/services/{{equipmentCard.image}}"  /><!--class="img-responsive"-->
+                </div>
+                <md-card-content class="setEquipmentCardHeight" ><!---->
+                    <!--class="setCardHeight"-->
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{equipmentCard.title}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <div>
+                        <p>{{equipmentCard.text}}</p>
+                    </div>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="start center">
+                    <md-button>
+                        <a ng-href="#/">More</a>
+                    </md-button>
+                    <md-card-icon-actions>
+            </md-card>
+        </div>
+    </div>
+</div>
+
+
+<md-button ng-click="vm.toggleLeft()"
+           hide-gt-md>
+    <!--class="md-primary"-->
+    Mobile Platform Menu
+</md-button>

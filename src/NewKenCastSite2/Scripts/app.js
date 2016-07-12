@@ -1,14 +1,23 @@
-﻿/// <reference path="../wwwroot/views/services/index.html" />
+﻿/// <reference path="../wwwroot/views/services/mobile-platform/applications/cards.html" />
+/// <reference path="../wwwroot/views/services/mobile-platform/applications/cards.html" />
+/// <reference path="../wwwroot/views/services/mobile-platform/applications/cards.html" />
+/// <reference path="../wwwroot/views/services/index.html" />
 
 (function () {
-//    'use strict';
-   
+    //    'use strict';
+
     //Creates a module called KenCast
     angular.module('kencast', [
         'ngAnimate',
         'ui.bootstrap',
         'ui.router',
-        'ngMaterial'
+        'ngMaterial',
+        "ngSanitize",
+	    "com.2fdevs.videogular", //dependencies for video player
+		"com.2fdevs.videogular.plugins.controls",
+		"com.2fdevs.videogular.plugins.overlayplay",
+		"com.2fdevs.videogular.plugins.poster",
+        "info.vietnamcode.nampnq.videogular.plugins.youtube"
     ])
 
     .config(['$stateProvider', '$urlRouterProvider',
@@ -22,15 +31,13 @@
                     views: {
                         'main': {
                             templateUrl: '/views/home.html',
-                            
+
                         },
                         'header': {
                             templateUrl: '/views/carousel.html',
                             controller: 'CarouselController as carouselCtrl'
                         }
-                    
                     }
-                   
                 })
                 .state('services', {
                     url: '/services',
@@ -41,44 +48,92 @@
                         }
                     }
                 })
-                        .state('fazzt', {                            
+                        .state('fazzt', {
                             url: '/services/fazzt',
                             abstract: true,
                             views: {
                                 'main': {
                                     templateUrl: '/views/services/fazzt/index.html',
                                     controller: 'SideMenuCtrl as vm'
-                                },
-                                'header': {
-                                    templateUrl: '/views/services/fazzt/header.html'
                                 }
+                                //,
+                                //'header': {
+                                //    templateUrl: '/views/services/fazzt/header.html'
+                                //}
                             }
-                            
+
                         })
 
                             .state('fazzt.overview', {
-                                url: '', //Default view for Fazzt section
-                                templateUrl: '/views/services/fazzt/overview.html',
+                                url: '', //Default view for Fazzt section, need this otherwise Fazzt section defaults to homepage
+                                views: {
+                                    'fazztBody': {
+                                        url: '',
+                                        templateUrl: '/views/services/fazzt/overview.html',
+                                        controller: 'videoController as videoCtrl'
+                                    }
+                                }
                             })
 
-                            .state('fazzt.applications', {
-                                templateUrl: '/views/services/fazzt/applications.html'
+                            .state('fazzt.applications', {                                
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/fazzt/applications.html',
+                                        controller: 'cardController as cardCtrl'
+                                    }
+                                }                                
                             })
+                                            .state('fazzt.applications.cards', {
+                                                views: {
+                                                    'applications': {
+                                                        templateUrl: '/views/services/fazzt/applications/cards.html',
+                                                        //controller: 'cardController as cardCtrl'
+                                                    }
+                                                }
+                                            })
 
+                                            .state('fazzt.applications.card', {
+                                                views: {
+                                                    'applications': {
+                                                        templateUrl: '/views/services/fazzt/applications/card.html',
+                                                        //controller: 'cardController as cardCtrl'
+                                                        //controller: 'profileController as profileCtrl'
+                                                    }
+                                                }
+                                            })
+                         
                             .state('fazzt.equipment', {
-                                templateUrl: '/views/services/fazzt/equipment.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/fazzt/equipment.html',
+                                        controller: 'equipmentController as equipmentCtrl'
+                                    }
+                                }                 
                             })
 
                             .state('fazzt.faq', {
-                                templateUrl: '/views/services/fazzt/faq.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/fazzt/faq.html',
+                                        controller: 'accordionController as accordionCtrl'
+                                    }                                    
+                                }                               
                             })
 
                             .state('fazzt.flowchart', {
-                                templateUrl: '/views/services/fazzt/flowchart.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/fazzt/flowchart.html'
+                                    }
+                                }                                
                             })
 
                             .state('fazzt.options', {
-                                templateUrl: '/views/services/fazzt/options.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/fazzt/options.html'
+                                    }
+                                }                                
                             })
 
                         .state('digital-cinema', {
@@ -88,37 +143,52 @@
                                 'main': {
                                     templateUrl: '/views/services/digital-cinema/index.html',
                                     controller: 'SideMenuCtrl as vm'
-                                },
-                                'header': {
-                                    templateUrl: '/views/services/digital-cinema/header.html'
                                 }
                             }
                         })
 
                             .state('digital-cinema.overview', {
                                 url: '', //Default view for Digital Cinema section
-                                templateUrl: '/views/services/digital-cinema/overview.html',
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/digital-cinema/overview.html',
+                                    }
+                                }
                             })
 
-                            .state('digital-cinema.applications', {
-                                templateUrl: '/views/services/digital-cinema/applications.html'
-                            })
+                            //.state('digital-cinema.applications', {
+                            //    templateUrl: '/views/services/digital-cinema/applications.html'
+                            //})
 
                             .state('digital-cinema.equipment', {
-                                templateUrl: '/views/services/digital-cinema/equipment.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/digital-cinema/equipment.html',
+                                        controller: 'equipmentController as equipmentCtrl'
+                                    }
+                                }                         
                             })
 
                             .state('digital-cinema.faq', {
-                                templateUrl: '/views/services/digital-cinema/faq.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/digital-cinema/faq.html',
+                                        controller: 'accordionController as accordionCtrl'
+                                    }
+                                }                         
                             })
 
                             .state('digital-cinema.flowchart', {
-                                templateUrl: '/views/services/digital-cinema/flowchart.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/digital-cinema/flowchart.html',
+                                    }
+                                }
                             })
 
-                            .state('digital-cinema.options', {
-                                templateUrl: '/views/services/digital-cinema/options.html'
-                            })
+                            //.state('digital-cinema.options', {
+                            //    templateUrl: '/views/services/digital-cinema/options.html'
+                            //})
 
                         .state('mobile-platform', {
                             url: '/services/mobile-platform',
@@ -127,28 +197,62 @@
                                 'main': {
                                     templateUrl: '/views/services/mobile-platform/index.html',
                                     controller: 'SideMenuCtrl as vm'
-                                },
-                                'header': {
-                                    templateUrl: '/views/services/mobile-platform/header.html'
-                                }
+                                },                        
                             }
                         })
 
                             .state('mobile-platform.overview', {
                                 url: '', //Default view for Digital Cinema section
-                                templateUrl: '/views/services/mobile-platform/overview.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/overview.html',
+                                    }
+                                }                               
                             })
 
                             .state('mobile-platform.applications', {
-                                templateUrl: '/views/services/mobile-platform/applications.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/applications.html',
+                                        controller: 'cardController as cardCtrl'
+                                    }
+                                } 
                             })
 
+                                            .state('mobile-platform.applications.cards', {
+                                                views: {
+                                                    'applications': {
+                                                        templateUrl: '/views/services/mobile-platform/applications/cards.html',
+                                                        controller: 'cardController as cardCtrl'
+                                                    }
+                                                }
+                                            })
+
+                                            .state('mobile-platform.applications.card', {
+                                                views: {
+                                                    'applications': {
+                                                        templateUrl: '/views/services/mobile-platform/applications/card.html',
+                                                    }
+                                                }
+                                            })
+
                             .state('mobile-platform.equipment', {
-                                templateUrl: '/views/services/mobile-platform/equipment.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/equipment.html',
+                                        controller: 'equipmentController as equipmentCtrl'
+                                    }
+                                }   
                             })
 
                             .state('mobile-platform.faq', {
-                                templateUrl: '/views/services/mobile-platform/faq.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/faq.html',
+                                        controller: 'accordionController as accordionCtrl'
+                                    }                                    
+                                }
+                                
                             })
 
                             .state('mobile-platform.flowchart', {
@@ -166,7 +270,7 @@
                             templateUrl: '/views/case-studies/index.html'
                         }
                     }
-                    
+
                 })
                         .state('cinema', {
                             url: '/case-studies/cinema',
@@ -195,7 +299,7 @@
                             templateUrl: '/views/company/index.html'
                         }
                     }
-                    
+
                 })
                         .state('about-us', {
                             url: '/company/about-us',
@@ -203,7 +307,7 @@
                                 'main': {
                                     templateUrl: '/views/company/about-us/index.html'
                                 }
-                            }                            
+                            }
                         })
 
                         .state('careers', {
@@ -212,7 +316,7 @@
                                 'main': {
                                     templateUrl: '/views/company/careers/index.html'
                                 }
-                            }                            
+                            }
                         })
 
                         .state('clients-and-testimonials', {
@@ -222,7 +326,7 @@
                                     templateUrl: '/views/company/clients-and-testimonials/index.html'
                                 }
                             }
-                            
+
                         })
 
                         .state('management', {
@@ -232,7 +336,7 @@
                                     templateUrl: '/views/company/management/index.html'
                                 }
                             }
-                            
+
                         })
 
                         .state('new-at-kencast', {
@@ -242,7 +346,7 @@
                                     templateUrl: '/views/company/new-at-kencast/index.html'
                                 }
                             }
-                            
+
                         })
 
                         .state('trade-shows', {
@@ -252,7 +356,7 @@
                                     templateUrl: '/views/company/trade-shows/index.html'
                                 }
                             }
-                            
+
                         });
         }])
         .run(['$state', '$rootScope', function ($state, $rootScope) {
@@ -261,4 +365,3 @@
 
 })();
 
-  

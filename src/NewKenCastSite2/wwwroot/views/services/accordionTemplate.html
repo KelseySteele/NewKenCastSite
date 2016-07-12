@@ -1,0 +1,7 @@
+﻿<uib-accordion>
+    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in accordionCtrl.groups" ng-init="group.expanded = false" ng-click="collapseAll(group)">
+        <div ng-class="{dataContent:true, activeContent:data.expanded}">
+            {{group.content}}
+        </div>
+    </uib-accordion-group>
+</uib-accordion>

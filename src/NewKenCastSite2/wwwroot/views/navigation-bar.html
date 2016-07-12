@@ -1,64 +1,82 @@
-﻿<div class="navigation-wrapper">
-    <nav class="navbar navbar-default">
-        <div class="navbar-header">
-            <!-- /veggieburger icon -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        
-        <div class="horizontal">
-            <div class="col-md-1"></div>
-            <div class="logo col-md-2">
-                <div class="col-md-1"></div>
-                <a ui-sref='home' class="brand-logo">
-                    <span><img src="../images/kencastlogo.jpg" /></span>
-                </a>
-            </div>
-            <div ng-controller="NavigationController as navigationCtrl" class="col-md-8">
-                <div class="container-fluid navbar-container">
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navBar">
-                        <ul class="menu nav navbar-nav  kencast-text" style="float: right">
-                            <li ui-sref-active="active" class="dropdown">
-                                <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown" >Services</a>
-                                <ul class="dropdown-menu">
-                                    <li><a ui-sref="fazzt.overview">Fazzt</a></li>
-                                    <li><a ui-sref="digital-cinema.overview">Digital Cinema</a></li>
-                                    <li><a ui-sref="mobile-platform.overview">Mobile Platform</a></li>
-                                </ul>
-                            </li>
-                            <li ui-sref-active="active" class="dropdown">
-                                <a ui-sref="case-studies" class="dropdown-toggle" data-toggle="dropdown">Case Studies</a>
-                                <ul class="dropdown-menu">
-                                    <li><a ui-sref="cinema">Cinema</a></li>
-                                    <li><a ui-sref="public-safety-and-military">Public Safety and Military</a></li>
-                                    <li><a ui-sref="retail">Retail</a></li>
-                                    <li><a ui-sref="tv-news">TV/News</a></li>
-                                </ul>
-                            </li>
-                            <li ui-sref-active="active" class="dropdown">
-                                <a ui-sref="company" class="dropdown-toggle" data-toggle="dropdown">Company</a>
-                                <ul class="dropdown-menu">
-                                    <li><a ui-sref="about-us">About Us</a></li>
-                                    <li><a ui-sref="careers">Careers</a></li>
-                                    <li><a ui-sref="clients-and-testimonials">Clients and Testimonials</a></li>
-                                    <li><a ui-sref="management">Management</a></li>
-                                    <li><a ui-sref="new-at-kencast">New at KenCast</a></li>
-                                    <li><a ui-sref="trade-shows">Trade Shows</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
+﻿<div ng-controller="NavigationController as navigationCtrl">
+
+    <div class="md-whiteframe-3dp">
+        <md-toolbar class="md-menu-toolbar main">           
+            <div class="navigationContainer" layout="row">
+                <!--<div class="col-md-1"></div>-->
+                <div class="logo" flex-gt-sm="66" flex="33"><!--col-md-2-->
+                    <!--<div class="col-md-1"></div>-->
+                    <div class="brand-logo">
+                        <a ui-sref='home'>
+                            <span><img  src="../images/kencastlogo.jpg" /></span>
+                            <!--<div class="slogan">
+                                <p>Innovative Content Delivery Solutions</p>
+                            </div>-->
+                        </a>
                     </div>
-                    
-                    <!--<ul class="nav navbar-nav navbar-right"></ul>-->
+                </div>
+
+                <div class="md-toolbar-tools main " flex-gt-sm="33" flex="66">
+                    <div hide-lg hide-gt-md >
+                        <md-button class="navbar-toggle" aria-label="Settings" data-toggle="collapse" data-target="#navBar">
+                            <!--md-icon-button ng-disabled="false" -->
+                            <md-icon class="material-icons">menu</md-icon>
+                            <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+                        </md-button>
+                    </div>
+
+                    <md-nav-bar class="container-fluid navbar-container" >
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!--<div class="collapse navbar-collapse" id="navBar">-->
+                            <!--<ul class="menu nav navbar-nav  kencast-text">-->
+                                <md-nav-item ui-sref-active="active" class="dropdown">
+                                    <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <!--<li><a ui-sref="fazzt.applications.explanation">Fazzt</a></li>-->
+                                        <li><a ui-sref="fazzt.overview">Fazzt</a></li>
+                                        <li><a ui-sref="digital-cinema.overview">Digital Cinema</a></li>
+                                        <li><a ui-sref="mobile-platform.overview">Mobile Platform</a></li>
+                                    </ul>
+                                </md-nav-item>
+                                <md-nav-item ui-sref-active="active" class="dropdown">
+                                    <a ui-sref="case-studies" class="dropdown-toggle" data-toggle="dropdown">Case Studies</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a ui-sref="cinema">Cinema</a></li>
+                                        <li><a ui-sref="public-safety-and-military">Public Safety and Military</a></li>
+                                        <li><a ui-sref="retail">Retail</a></li>
+                                        <li><a ui-sref="tv-news">TV/News</a></li>
+                                    </ul>
+                                </md-nav-item>
+                                <md-nav-item ui-sref-active="active" class="dropdown">
+                                    <a ui-sref="company" class="dropdown-toggle" data-toggle="dropdown">Company</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a ui-sref="about-us">About Us</a></li>
+                                        <li><a ui-sref="careers">Careers</a></li>
+                                        <li><a ui-sref="clients-and-testimonials">Clients and Testimonials</a></li>
+                                        <li><a ui-sref="management">Management</a></li>
+                                        <li><a ui-sref="new-at-kencast">New at KenCast</a></li>
+                                        <li><a ui-sref="trade-shows">Trade Shows</a></li>
+                                    </ul>
+                                </md-nav-item>
+                            <!--</ul>-->
+
+                        <!--</div>-->
+
+
+                    </md-nav-bar>
                 </div>
             </div>
-            <div class="col-md-1"></div>
-            </div>
-            <!-- /.navbar-collapse -->
-    </nav>
-</div>
+        </md-toolbar>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+

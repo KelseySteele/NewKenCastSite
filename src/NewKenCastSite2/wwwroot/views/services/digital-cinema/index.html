@@ -1,0 +1,23 @@
+﻿<div class="fill-height">
+        <md-sidenav class="md-sidenav-left" md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"><!--md-whiteframe="4"-->
+            <div layout="column">
+                <close-sidenav></close-sidenav>
+                <ul class="side-menu" layout-padding>
+                    <li class="parent-list-item"><h2 class="md-toolbar-tools">Services: Digital Cinema</h2></li>
+                    <li ng-repeat="section in vm.menu.sections" class="parent-list-item" ng-if="section.service === 'digital-cinema'"
+                        ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                        <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                            id="heading_{{ section.name }}">
+                            {{section}}
+                        </h2>
+                        <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                    </li>
+                </ul>
+            </div>
+        </md-sidenav>
+
+        <div class="sub-menu-body" layout-gt-sm="row" layout="column">
+            <div flex-gt-sm="66" ui-view="fazztBody"></div>
+            <div flex-gt-sm="33"></div>
+        </div>
+</div>

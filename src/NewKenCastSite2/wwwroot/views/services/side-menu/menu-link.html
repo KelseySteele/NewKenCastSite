@@ -1,0 +1,7 @@
+﻿<md-button class="sidenavButton" ui-sref-active="active"
+    ui-sref="{{section.state}}" ng-click="focusSection()">
+    {{section.name}}
+    <span class="md-visually-hidden"
+             ng-if="isSelected()">
+    </span>
+</md-button>

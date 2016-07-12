@@ -1,13 +1,29 @@
-﻿<div class="row homepage-pad">
-    <h2>New at KenCast</h2>
-    <!--<div class="col-md-1"></div>-->
+﻿
+<div  ng-controller="NewHomepageController as newHomepageCtrl" >
+        <div layout="row" flex>
+            <h2 class="homepage-pad">New at KenCast</h2>
+        </div>
+        <div layout-gt-sm="row" layout="column" >
+            <div ng-repeat="section in newHomepageCtrl.sections">
+                <md-card class="introCards" flex>
+                    <img ng-src="{{section.image}}" class="md-card-image" alt="{{section.title}}" />
+                    <md-card-content class="setCardHeight">
+                        <md-card-title>
+                            <md-card-title-text class="md-headline">
+                                <span class="md-headline">{{section.title}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <div>
+                            {{section.text}}
+                        </div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="start center">
+                        <md-button>
+                            <a ng-href="#/">More</a>
+                        </md-button>
+                    <md-card-icon-actions>
+                </md-card>
+            </div>
+        </div>
 </div>
-<div class="row" ng-controller="NewHomepageController as newHomepageCtrl" >
-    <!--<div class="col-md-1"></div>-->
-    <div ng-repeat="section in newHomepageCtrl.sections" class="col-md-3">
-        <img ng-src="{{section.image}}" />
-        <h3>{{section.title}}</h3>
-        <p>{{section.text}}</p>
-    </div>
-    <!--<div class="col-md-2"></div>-->
-</div>
+

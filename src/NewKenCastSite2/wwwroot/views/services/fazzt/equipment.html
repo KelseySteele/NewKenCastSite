@@ -1,1 +1,29 @@
-﻿<p>Fazzt Equipment</p>
+﻿<div class="servicesBody">
+    <h2>Fazzt Equipment</h2>
+    <div layout="column" layout-wrap>
+        <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
+        <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'fazzt'}" flex>
+            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" md-ink-ripple="#FFF">
+                <!--<a class="record" ui-sref="fazzt.applications.card" ng-click="equipmentCtrl.selectCard(equipmentCard)" ng-animate-ref=cardImage>
+                    <img ng-src="{{cardImage.image}}" class="md-card-img img-responsive" alt="{{cardImage.title}}" />
+                </a>-->
+                <md-card-title class="cardPanel">
+                    <md-card-title-text>
+                        <span class="md-headline">{{equipmentCard.title}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    {{equipmentCard.text}}
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>
+
+
+
+    <md-button ng-click="vm.toggleLeft()"
+               hide-gt-md>
+        <!--class="md-primary"-->
+        Fazzt Menu
+    </md-button>

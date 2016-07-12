@@ -17,7 +17,7 @@
                 {
                     service: 'fazzt',
                     name: 'applications',
-                    state: 'fazzt.applications',
+                    state: 'fazzt.applications.cards',
                     type: 'link'
                 },
                 {
@@ -50,12 +50,12 @@
                      state: 'digital-cinema.overview',
                      type: 'link'
                  },
-                {
-                    service: 'digital-cinema',
-                    name: 'applications',
-                    state: 'digital-cinema.applications',
-                    type: 'link'
-                },
+                //{
+                //    service: 'digital-cinema',
+                //    name: 'applications',
+                //    state: 'digital-cinema.applications',
+                //    type: 'link'
+                //},
                 {
                     service: 'digital-cinema',
                     name: 'equipment',
@@ -74,12 +74,12 @@
                      state: 'digital-cinema.flowchart',
                      type: 'link'
                  },
-                 {
-                     service: 'digital-cinema',
-                     name: 'options',
-                     state: 'digital-cinema.options',
-                     type: 'link'
-                 },
+                 //{
+                 //    service: 'digital-cinema',
+                 //    name: 'options',
+                 //    state: 'digital-cinema.options',
+                 //    type: 'link'
+                 //},
                  {
                      service: 'mobile-platform',
                      name: 'overview',

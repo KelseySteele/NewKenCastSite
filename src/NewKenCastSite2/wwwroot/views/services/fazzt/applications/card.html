@@ -1,0 +1,16 @@
+﻿<div ng-show="cardCtrl.isSelected" ng-animate-ref="cardCtrl.isSelected" class="card">    
+    <!--class="profile record"-->
+    <!--<i class="material-icons md-light">arrow_back</i>-->
+    <img ng-src="{{cardCtrl.card.image}}" class="md-card-img img-responsive" alt="{{cardCtrl.card.title}}" />
+    <a ui-sref="fazzt.applications.cards">
+        <i class="material-icons md-light">arrow_back</i>
+    </a>
+    <md-card-title class="cardPanel">
+        <md-card-title-text>
+            <span class="md-headline">{{cardCtrl.card.title}}</span>
+        </md-card-title-text>
+        <md-card-content>
+            <p>{{cardCtrl.card.text}}</p>
+        </md-card-content>
+    </md-card-title>
+</div>

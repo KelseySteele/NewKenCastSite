@@ -1,22 +1,43 @@
-﻿<!--<div class="container-fluid">-->
-    <!--<div class="row homepage-pad">
-        <h2>Services</h2>
-    </div>-->
+﻿
+<div layout="row" layout-align="center center" >
+    <div flex></div>
+    <div flex="66" >
+        <div layout="column">
+            <div layout="row" flex>
+                <div layout="column">
+                    <div>
+                        <h2>Services</h2>
+                    </div>
+                    <div>
+                        <p>For the last two decades, KenCast has developed ultra-reliable software for multicast content, often global, and often encrypted or in DRM format. KenCast understands that such content is useless if even a single bit is wrong.</p>
+                        <p>Our secure and efficient technology ensures delivery of live video streams and very large encrypted files, often to thousands of sites. KenCast technology is used in applications in the entertainment and media industries, military, homeland security, public safety, and banking and finance, where flawless delivery is often the only option for these applications.</p>
+                    </div>
+                </div>
+            </div>
 
-    <div ng-controller="ServicesController as servicesCtrl" class="row">
-        <div>
-            <h2>Services</h2>
-        </div>
-        <p>For the last two decades, KenCast has developed ultra-reliable software for multicast content, often global, and often encrypted or in DRM format. KenCast understands that such content is useless if even a single bit is wrong.</p>
-        <p>Our secure and efficient technology ensures delivery of live video streams and very large encrypted files, often to thousands of sites. KenCast technology is used in applications in the entertainment and media industries, military, homeland security, public safety, and banking and finance, where flawless delivery is often the only option for these applications.</p>
 
-        <div ng-repeat="service in servicesCtrl.services" class="col-md-3 across">
-            <a ng-href="#/services/{{service.state}}" >
-                <img class="clear" ng-src="{{service.image}}" />
-                <h3>{{service.title}}</h3>
-                <p>{{service.text}}</p>
-            </a>
+
+            <div layout-gt-sm="row" layout="column">
+                <div ng-repeat="service in servicesCtrl.services">
+                    <md-card class="introCards" flex>
+                        <img ng-src="{{service.image}}" class="md-card-image" /><!--class="md-card-image"-->
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline intro">{{service.title}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content class="setCardHeight">
+                            <p>{{service.text}}</p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="start center">
+                            <md-button>
+                                <a ng-href="#/services/{{service.state}}">More</a>
+                            </md-button>
+                            <md-card-icon-actions>
+                    </md-card>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2"></div>
     </div>
-<!--</div>-->
+    <div flex></div>
+</div>

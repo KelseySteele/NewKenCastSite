@@ -9,7 +9,7 @@
 
     var slides = [
                 {
-                    image: 'images/homeCarousel/to-thousands-of-locations.jpg',
+                    image: 'images/homeCarousel/contentDelivery.jpg',
                     text: 'Send large video files and live video streams to thousands of locations'
                 },
                 {

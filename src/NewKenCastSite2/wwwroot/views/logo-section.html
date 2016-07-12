@@ -1,10 +1,14 @@
-﻿<div class="row homepage-pad">
-    <h2>Our Customers</h2>
-</div>
+﻿<div ng-controller="LogoController as logoCtrl" ><!--layout="row layout-align="center"-->
+    <div layout="column">
+        <div class="row" flex>
+            <h2 class="homepage-pad">Our Customers</h2>
+        </div>
 
-<div class= "row" ng-controller="LogoController as logoCtrl">
-    <div class= "across" ng-repeat="logo in logoCtrl.logos">
-        <a href="logo.link"><img ng-src="{{logo.image}}"/></a>
+        <div layout-gt-sm="row" layout="column" layout-align="space-between">
+            <div ng-repeat="logo in logoCtrl.logos"><!--class="across"--> 
+                <a href="logo.link"><img class="img-responsive" ng-src="{{logo.image}}" /></a>
+            </div>
+            <!--<div class="col-md-3"></div>-->
+        </div>
     </div>
-    <!--<div class="col-md-3"></div>-->
 </div>
