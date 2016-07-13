@@ -1,4 +1,6 @@
-﻿<div ng-show="cardCtrl.isSelected" ng-animate-ref="cardCtrl.isSelected" class="card">    
+﻿
+<!-- Fazzt Card -->
+<div ng-show="cardCtrl.isSelected" ng-animate-ref="cardCtrl.isSelected" class="card">    
     <!--class="profile record"-->
     <!--<i class="material-icons md-light">arrow_back</i>-->
     <img ng-src="{{cardCtrl.card.image}}" class="md-card-img img-responsive" alt="{{cardCtrl.card.title}}" />
@@ -10,7 +12,7 @@
             <span class="md-headline">{{cardCtrl.card.title}}</span>
         </md-card-title-text>
         <md-card-content>
-            <p>{{cardCtrl.card.text}}</p>
+            <div ng-bind-html="cardCtrl.card.text"></div>
         </md-card-content>
     </md-card-title>
 </div>

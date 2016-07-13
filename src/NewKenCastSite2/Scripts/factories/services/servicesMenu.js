@@ -40,7 +40,7 @@
                  },
                  {
                     service: 'fazzt',
-                    name: 'options',
+                    name: 'consumer option',
                     state: 'fazzt.options',
                     type: 'link'
                  },
@@ -89,7 +89,7 @@
                 {
                     service: 'mobile-platform',
                     name: 'applications',
-                    state: 'mobile-platform.applications',
+                    state: 'mobile-platform.applications.cards',
                     type: 'link'
                 },
                 {
@@ -112,8 +112,8 @@
                  },
                  {
                      service: 'mobile-platform',
-                     name: 'options',
-                     state: 'mobile-platform.options',
+                     name: 'consumer option',
+                     state: 'mobile-platform.consumeroption',
                      type: 'link'
                  }
                 ];

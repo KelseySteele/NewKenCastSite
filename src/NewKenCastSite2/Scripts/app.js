@@ -56,10 +56,6 @@
                                     templateUrl: '/views/services/fazzt/index.html',
                                     controller: 'SideMenuCtrl as vm'
                                 }
-                                //,
-                                //'header': {
-                                //    templateUrl: '/views/services/fazzt/header.html'
-                                //}
                             }
 
                         })
@@ -68,7 +64,6 @@
                                 url: '', //Default view for Fazzt section, need this otherwise Fazzt section defaults to homepage
                                 views: {
                                     'fazztBody': {
-                                        url: '',
                                         templateUrl: '/views/services/fazzt/overview.html',
                                         controller: 'videoController as videoCtrl'
                                     }
@@ -202,9 +197,10 @@
                         })
 
                             .state('mobile-platform.overview', {
-                                url: '', //Default view for Digital Cinema section
+                                url: '', //Default view for Mobile Platform section
                                 views: {
                                     'fazztBody': {
+                                        url: '',
                                         templateUrl: '/views/services/mobile-platform/overview.html',
                                     }
                                 }                               
@@ -218,10 +214,10 @@
                                     }
                                 } 
                             })
-
                                             .state('mobile-platform.applications.cards', {
                                                 views: {
                                                     'applications': {
+                                                        //template: "Hello, this template is working. ",
                                                         templateUrl: '/views/services/mobile-platform/applications/cards.html',
                                                         controller: 'cardController as cardCtrl'
                                                     }
@@ -256,11 +252,19 @@
                             })
 
                             .state('mobile-platform.flowchart', {
-                                templateUrl: '/views/services/mobile-platform/flowchart.html'
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/flowchart.html'
+                                    }                                    
+                                }
                             })
 
-                            .state('mobile-platform.options', {
-                                templateUrl: '/views/services/mobile-platform/options.html'
+                            .state('mobile-platform.consumeroption', {
+                                views: {
+                                    'fazztBody': {
+                                        templateUrl: '/views/services/mobile-platform/consumeroption.html'
+                                    }                                    
+                                }
                             })
 
                 .state('case-studies', {

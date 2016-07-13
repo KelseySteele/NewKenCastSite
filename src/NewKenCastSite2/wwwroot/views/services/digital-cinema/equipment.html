@@ -1,6 +1,6 @@
 ﻿<div class="servicesBody">
     <h2>Digital Cinema Equipment</h2>
-    <div layout="row" layout-xs="column" layout-wrap>
+    <div layout="row" layout-sm="column" layout-wrap>
         <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
         <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'digitalcinema'}" class="md-card-equipment"><!--flex-md="20"-->
             <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" >
@@ -14,7 +14,7 @@
                         </md-card-title-text>
                     </md-card-title>
                     <div>
-                        <p ng-bind-html>{{equipmentCard.text}}</p>
+                        <div ng-bind-html="equipmentCard.text"></div>
                     </div>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="start center">

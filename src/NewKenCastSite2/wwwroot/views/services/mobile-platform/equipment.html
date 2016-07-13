@@ -1,12 +1,12 @@
 ﻿<div class="servicesBody">
     <h2>Mobile Platform Equipment</h2>
-    <div layout="row" ><!--layout-xs="column"-->
+    <div layout="row" layout-sm="column" ><!--layout-wrap-->
         <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
         <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'mobileplatform'}" class="md-card-equipment">
             <!--flex-md="20"-->
-            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" flex-offset-gt-sm="20" flex-offset-xs="99">
+            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" flex-offset-gt-sm="20" ><!--flex-offset-xs="99"-->
                 <div>
-                    <img ng-src="/images/services/{{equipmentCard.image}}"  /><!--class="img-responsive"-->
+                    <img ng-src="/images/services/{{equipmentCard.image}}"  class="img-responsive"/><!--class="img-responsive"-->
                 </div>
                 <md-card-content class="setEquipmentCardHeight" ><!---->
                     <!--class="setCardHeight"-->
