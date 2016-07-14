@@ -23,7 +23,7 @@
                 {
                     service: 'fazzt',
                     name: 'equipment',
-                    state: 'fazzt.equipment',
+                    state: 'fazzt.equipment.cards',
                     type: 'link'
                 },
                 {
@@ -36,12 +36,6 @@
                     service: 'fazzt',
                     name: 'flowchart',
                     state: 'fazzt.flowchart',
-                    type: 'link'
-                 },
-                 {
-                    service: 'fazzt',
-                    name: 'consumer option',
-                    state: 'fazzt.options',
                     type: 'link'
                  },
                  {
@@ -59,7 +53,7 @@
                 {
                     service: 'digital-cinema',
                     name: 'equipment',
-                    state: 'digital-cinema.equipment',
+                    state: 'digital-cinema.equipment.cards',
                     type: 'link'
                 },
                 {

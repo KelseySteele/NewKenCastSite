@@ -5,13 +5,7 @@
         .module('kencast')
         .controller('equipmentController', ['$state', function ($state) {
             this.equipmentCards = equipmentCards;
-            //this.card = {
-            //    image: 'images/services/fazzt/applications/banking.jpg',
-            //    title: 'Banking',
-            //    text: 'Banks...blah...blah...blah',
-            //    service: 'fazzt',
-            //    state: 'banking'
-            //}
+            this.card = {};
 
             this.selectCard = function (card) {
                 for (var i = 0; i < this.equipmentCards.length; i++) {
@@ -25,26 +19,12 @@
                 return this.card === checkCard;
             };
 
-            //identify card that was clicked
-            //this.selectCard = function (card) {
-            //    for (var i = 0; i < this.equipmentCards.length; i++) {
-            //        if (this.equipmentCards[i].image === this.image) {
-            //            this.image = this.equipmentCards[i].image;
-            //            this.title = this.equipmentCards[i].title;
-            //            this.text = this.cardImage[i].text;
-            //        }                    
-            //    }
-            //};
-
-            //set active tab
-
-
-
         }])
 
 
     var equipmentCards = [
                 {
+  
                     title: 'Fazzt Contribution Server',
                     text: 'The Fazzt Conrtibution Server...',
                     longText:'<p>The Fazzt Contribution Server software program is optimized to let you send content on a two-way network (TCP/IP) to a Fazzt Enterprise Server. The Contribution Server enables the content provider to locally manage channels, transmission schedules, access to content, user permissions, and many other related functions that traditionally are administered at the central hub server. This gives the content provider complete control over content management and distribution, while still allowing them to benefit from the advantages of the Fazzt Enterprise Server’s shared content delivery capabilities.</p>',
@@ -70,14 +50,14 @@
                     service: 'fazzt'
                 },
                 {
-                    image: 'digitalCinema/equipment/cinemaPro3RU.jpg',
+                    image: '/images/services/digitalCinema/equipment/cinemaPro3RU.jpg',
                     title: 'CinemaPro 3RU',
                     text: 'The CinemaPro 3RU',
                     longText: 'The CinemaPro 3RU is compatible with all digital theater management systems, including legacy systems, and enables delivery by satellite or fiber optics of very large movie files and streaming of live events',
                     service: 'digitalcinema'
                 },
                 {
-                    image: 'digitalCinema/equipment/cinemaPro2RU.jpg',
+                    image: '/images/services/digitalCinema/equipment/cinemaPro2RU.jpg',
                     title: 'CinemaPro 2RU',
                     text: 'The CinemaPro 2RU...',
                     longText: 'The CinemaPro 2RU appliance supports reception, storage and validation of digital cinema packages (movies) as well as live streams. The CinemaPro 2RU can also manage multiple live events with simultaneous recording and time-shifting, using the built in DVR feature.',
@@ -85,14 +65,14 @@
                 },
 
                 {
-                    image: 'digitalCinema/equipment/professional2KDecoder.jpg',
+                    image: '/images/services/digitalCinema/equipment/professional2KDecoder.jpg',
                     title: 'Professional 2K Decoder',
                     text: 'The Professional 2K Decoder...',
                     longText: 'The Professional 2K Decoder appliance adds decoding of live events to the cinema product line offered by KenCast. It is capable of decoding AVC and MPEG-2 content up to 1080p @ 60 frames per second. It provides a cost effective option for exhibitors to support alternative content up to HD resolutions',
                     service: 'digitalcinema'
                 },
                 {
-                    image: 'digitalCinema/equipment/professional4KDecoder.jpg',
+                    image: '/images/services/digitalCinema/equipment/professional4KDecoder.jpg',
                     title: 'Professional 4K Decoder',
                     text: 'The professional 4K Decoder...',
                     longText: 'The Professional 4K Decoder supports multiple modes of management including local web administration. KenCast centralized live event management, LCD control panel, and a local CinemaPro',

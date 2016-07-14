@@ -2,9 +2,9 @@
     <h2>Fazzt Applications</h2>
     <div layout="row" layout-wrap>
         <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
-        <div ng-repeat="cardImage in cardCtrl.cardImages | filter: {service: 'fazzt'}" class="md-card-images small repeated-item" >
-            <md-card ng-class="{active: cardCtrl.isSelected(cardImage)}" md-ink-ripple="#FFF">
-                <a class="record" ui-sref="fazzt.applications.card" ng-click="cardCtrl.selectCard(cardImage)" ng-animate-ref=cardImage  >
+        <div ng-repeat="cardImage in applicationCtrl.cardImages | filter: {service: 'fazzt'}" class="md-card-images small repeated-item" >
+            <md-card ng-class="{active: applicationCtrl.isSelected(cardImage)}" md-ink-ripple="#FFF">
+                <a class="record" ui-sref="fazzt.applications.card" ng-click="applicationCtrl.selectCard(cardImage)" ng-animate-ref=cardImage  >
                     <img ng-src="{{cardImage.image}}" class="md-card-img img-responsive" alt="{{cardImage.title}}" />
                 </a>
                 <md-card-title class="cardPanel">

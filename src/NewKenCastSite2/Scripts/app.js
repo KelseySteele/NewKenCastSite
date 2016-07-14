@@ -74,7 +74,7 @@
                                 views: {
                                     'fazztBody': {
                                         templateUrl: '/views/services/fazzt/applications.html',
-                                        controller: 'cardController as cardCtrl'
+                                        controller: 'applicationController as applicationCtrl'
                                     }
                                 }                                
                             })
@@ -82,7 +82,6 @@
                                                 views: {
                                                     'applications': {
                                                         templateUrl: '/views/services/fazzt/applications/cards.html',
-                                                        //controller: 'cardController as cardCtrl'
                                                     }
                                                 }
                                             })
@@ -91,8 +90,6 @@
                                                 views: {
                                                     'applications': {
                                                         templateUrl: '/views/services/fazzt/applications/card.html',
-                                                        //controller: 'cardController as cardCtrl'
-                                                        //controller: 'profileController as profileCtrl'
                                                     }
                                                 }
                                             })
@@ -105,6 +102,21 @@
                                     }
                                 }                 
                             })
+                                            .state('fazzt.equipment.cards', {
+                                                views: {
+                                                    'equipment': {
+                                                        templateUrl: '/views/services/fazzt/equipment/cards.html',
+                                                    }
+                                                }
+                                            })
+
+                                            .state('fazzt.equipment.card', {
+                                                views: {
+                                                    'equipment': {
+                                                        templateUrl: '/views/services/fazzt/equipment/card.html',
+                                                    }
+                                                }
+                                            })
 
                             .state('fazzt.faq', {
                                 views: {
@@ -164,6 +176,22 @@
                                 }                         
                             })
 
+                                          .state('digital-cinema.equipment.cards', {
+                                              views: {
+                                                  'equipment': {
+                                                      templateUrl: '/views/services/digital-cinema/equipment/cards.html',
+                                                  }
+                                              }
+                                          })
+
+                                         .state('digital-cinema.equipment.card', {
+                                              views: {
+                                                  'equipment': {
+                                                      templateUrl: '/views/services/digital-cinema/equipment/card.html',
+                                                   }
+                                              }
+                                          })
+
                             .state('digital-cinema.faq', {
                                 views: {
                                     'fazztBody': {
@@ -210,16 +238,14 @@
                                 views: {
                                     'fazztBody': {
                                         templateUrl: '/views/services/mobile-platform/applications.html',
-                                        controller: 'cardController as cardCtrl'
+                                        controller: 'applicationController as applicationCtrl'
                                     }
                                 } 
                             })
                                             .state('mobile-platform.applications.cards', {
                                                 views: {
                                                     'applications': {
-                                                        //template: "Hello, this template is working. ",
                                                         templateUrl: '/views/services/mobile-platform/applications/cards.html',
-                                                        controller: 'cardController as cardCtrl'
                                                     }
                                                 }
                                             })

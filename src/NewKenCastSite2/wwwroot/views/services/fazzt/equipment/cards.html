@@ -1,0 +1,32 @@
+﻿
+<div class="servicesBody">
+    <h2>Fazzt Equipment</h2>
+    <div layout="row" layout-sm="column">
+        <!--layout-xs-wrap-->
+        <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
+        <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'fazzt'}" class="md-card-images">
+            <!--flex-md="20"-->
+            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" md-ink-ripple="#FFF">
+                <a class="record" ui-sref="fazzt.equipment.card" ng-click="equipmentCtrl.selectCard(equipmentCard)" ng-animate-ref=equipmentCard>
+                        <img src="https://placehold.it/800x300" class="md-card-img img-responsive" alt="{{equipmentCard.title}}"/>
+                </a>
+                    <md-card-content class="setEquipmentCardHeight">
+                        <!--class="setCardHeight"-->
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{equipmentCard.title}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <div>
+                            <div ng-bind-html="equipmentCard.text"></div>
+                        </div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="start center">
+                        <md-button>
+                            <a ui-sref="fazzt.equipment.card">More</a>
+                        </md-button>
+                    <md-card-icon-actions>
+            </md-card>
+        </div>
+    </div>
+</div>

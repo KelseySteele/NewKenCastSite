@@ -1,0 +1,15 @@
+﻿<!-- Digital Cinema Equipment Card -->
+<div class="servicesBody">
+    <div ng-show="equipmentCtrl.isSelected" class="card" ng-animate-ref="equipmentCtrl.isSelected" layout="column">
+        <img ng-src="{{equipmentCtrl.card.image}}" class="md-card-img img-responsive" alt="{{equipmentCtrl.card.title}}" />
+        <a class="darkEquipmentArrow" ui-sref="digital-cinema.equipment.cards">
+            <i class="material-icons md-dark">arrow_back</i>
+        </a>
+        <md-card-title ><!--class="cardPanel"-->
+            <md-card-title-text>
+                <span class="md-headline">{{equipmentCtrl.card.title}}</span>
+            </md-card-title-text>
+            <div ng-bind-html="equipmentCtrl.card.longText"></div>
+        </md-card-title>
+    </div>
+</div>
