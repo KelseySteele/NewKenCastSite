@@ -41,21 +41,30 @@
 </head>
 
 
-<body ng-app="kencast">
+<body ng-app="kencast" layout="column"  ng-controller="NavigationController as navigationCtrl"><!-- sidenav and content are layed out side by side, left to right -->
+    <md-toolbar>
+        <md-button class="menu">
+            <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+        <h1>KenCast</h1>
+    </md-toolbar>
 
-    <div>
-        <navigation-directive></navigation-directive>
-    </div>
+        <div layout="row" flex>
+            <navigation-directive></navigation-directive><!--side menu-->
 
-    <div>
-        <div ui-view ="header"></div>
-    </div>
+            <md-content flex id="content"> <!-- content from https://www.youtube.com/watch?v=Qi31oO5u33U -->
+                <div>
+                    <div ui-view="header"></div>
+                </div>
 
-            <div ui-view ="main"></div>            
+                <div ui-view="main"></div>
+            </md-content>
+        </div>
 
-    <!--<div class="clearfooter">
-        <footer-directive></footer-directive>
-    </div>-->
+        <!--<div class="clearfooter">
+            <footer-directive></footer-directive>
+        </div>-->
 
 </body>
+
 </html>

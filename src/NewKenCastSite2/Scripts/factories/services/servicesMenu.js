@@ -89,7 +89,7 @@
                 {
                     service: 'mobile-platform',
                     name: 'equipment',
-                    state: 'mobile-platform.equipment',
+                    state: 'mobile-platform.equipment.cards',
                     type: 'link'
                 },
                 {

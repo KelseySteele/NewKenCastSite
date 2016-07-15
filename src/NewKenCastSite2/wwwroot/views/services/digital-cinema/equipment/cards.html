@@ -1,0 +1,30 @@
+﻿
+<div class="servicesBody">
+    <h2>Digital Cinema Equipment</h2>
+    <div layout="row" layout-sm="column">
+        <!--layout-wrap lets children wrap within container if elements equal more than 100%-->
+        <div ng-repeat="equipmentCard in equipmentCtrl.equipmentCards | filter: {service: 'digitalcinema'}" class="md-card-images">
+            <md-card ng-class="{active: equipmentCtrl.isSelected(equipmentCard)}" md-ink-ripple="#FFF">
+                <a class="record" ui-sref="digital-cinema.equipment.card" ng-click="equipmentCtrl.selectCard(equipmentCard)" ng-animate-ref=equipmentCard>
+                    <img ng-src="{{equipmentCard.image}}" class="md-card-img img-responsive" alt="{{equipmentCard.title}}" />
+                </a>
+                    <md-card-content class="setEquipmentCardHeight">
+                        <!--class="setCardHeight"-->
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{equipmentCard.title}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <div>
+                            <div ng-bind-html="equipmentCard.text"></div>
+                        </div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="start center">
+                        <md-button>
+                            <a ui-sref="digital-cinema.equipment.card">More</a>
+                        </md-button>
+                    <md-card-icon-actions>
+            </md-card>
+        </div>
+    </div>
+</div>

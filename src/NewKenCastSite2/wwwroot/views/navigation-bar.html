@@ -1,74 +1,32 @@
-﻿<div ng-controller="NavigationController as navigationCtrl">
-
-    <div class="md-whiteframe-3dp">
-        <md-toolbar class="md-menu-toolbar main">           
-            <div class="navigationContainer" layout="row">
-                <!--<div class="col-md-1"></div>-->
-                <div class="logo" flex-gt-sm="66" flex="33"><!--col-md-2-->
-                    <!--<div class="col-md-1"></div>-->
-                    <div class="brand-logo">
-                        <a ui-sref='home'>
-                            <span><img  src="../images/kencastlogo.jpg" /></span>
-                            <!--<div class="slogan">
-                                <p>Innovative Content Delivery Solutions</p>
-                            </div>-->
-                        </a>
-                    </div>
-                </div>
-
-                <div class="md-toolbar-tools main " flex-gt-sm="33" flex="66">
-                    <div hide-lg hide-gt-md >
-                        <md-button class="navbar-toggle" aria-label="Settings" data-toggle="collapse" data-target="#navBar">
-                            <!--md-icon-button ng-disabled="false" -->
-                            <md-icon class="material-icons">menu</md-icon>
-                            <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+﻿<!--<md-toolbar>
+    <h1>KenCast</h1>
+</md-toolbar>-->
+        <div layout="row" flex>
+            <!-- Main sidenav when collapsed -->
+            <md-sidenav layout="column" md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+                <md-list>
+                    <md-item ng-repeat="it in navigationCtrl"></md-item>
+                    <md-list-item>
+                        <md-button>
+                            Digital Cinema
                         </md-button>
-                    </div>
+                    </md-list-item>
 
-                    <md-nav-bar class="container-fluid navbar-container" >
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <!--<div class="collapse navbar-collapse" id="navBar">-->
-                            <!--<ul class="menu nav navbar-nav  kencast-text">-->
-                                <md-nav-item ui-sref-active="active" class="dropdown">
-                                    <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown">Services</a>
-                                    <ul class="dropdown-menu">
-                                        <!--<li><a ui-sref="fazzt.applications.explanation">Fazzt</a></li>-->
-                                        <li><a ui-sref="fazzt.overview">Fazzt</a></li>
-                                        <li><a ui-sref="digital-cinema.overview">Digital Cinema</a></li>
-                                        <li><a ui-sref="mobile-platform.overview">Mobile Platform</a></li>
-                                    </ul>
-                                </md-nav-item>
-                                <md-nav-item ui-sref-active="active" class="dropdown">
-                                    <a ui-sref="case-studies" class="dropdown-toggle" data-toggle="dropdown">Case Studies</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a ui-sref="cinema">Cinema</a></li>
-                                        <li><a ui-sref="public-safety-and-military">Public Safety and Military</a></li>
-                                        <li><a ui-sref="retail">Retail</a></li>
-                                        <li><a ui-sref="tv-news">TV/News</a></li>
-                                    </ul>
-                                </md-nav-item>
-                                <md-nav-item ui-sref-active="active" class="dropdown">
-                                    <a ui-sref="company" class="dropdown-toggle" data-toggle="dropdown">Company</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a ui-sref="about-us">About Us</a></li>
-                                        <li><a ui-sref="careers">Careers</a></li>
-                                        <li><a ui-sref="clients-and-testimonials">Clients and Testimonials</a></li>
-                                        <li><a ui-sref="management">Management</a></li>
-                                        <li><a ui-sref="new-at-kencast">New at KenCast</a></li>
-                                        <li><a ui-sref="trade-shows">Trade Shows</a></li>
-                                    </ul>
-                                </md-nav-item>
-                            <!--</ul>-->
+                    <md-list-item>
+                        <md-button>
+                            Fazzt
+                        </md-button>
+                    </md-list-item>
 
-                        <!--</div>-->
-
-
-                    </md-nav-bar>
-                </div>
-            </div>
-        </md-toolbar>
+                    <md-list-item>
+                        <md-button>
+                            Mobile Platform
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
         </div>
-    </div>
+
 
 
 

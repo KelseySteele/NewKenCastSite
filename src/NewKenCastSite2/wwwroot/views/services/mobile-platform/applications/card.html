@@ -1,17 +1,18 @@
 ﻿
 <!-- Mobile Platform Card -->
-<h2>It's just the functions that aren't working. </h2>
-<div ng-show="applicationCtrl.isSelected" ng-animate-ref="applicationCtrl.isSelected" class="card">
-    <img ng-src="{{applicationCtrl.card.image}}" class="md-card-img img-responsive" alt="{{applicationCtrl.card.title}}" />
-    <a ui-sref="mobile-platform.applications.cards">
-        <i class="material-icons md-light">arrow_back</i>
-    </a>
-    <md-card-title class="cardPanel">
-        <md-card-title-text>
-            <span class="md-headline">{{applicationCtrl.card.title}}</span>
-        </md-card-title-text>
-        <md-card-content>
-            <p>{{applicationCtrl.card.text}}</p>
-        </md-card-content>
-    </md-card-title>
+<div class="servicesBody">
+    <div ng-show="applicationCtrl.isSelected" ng-animate-ref="applicationCtrl.isSelected" class="card">
+        <img ng-src="{{applicationCtrl.card.image}}" class="md-card-img img-responsive" alt="{{applicationCtrl.card.title}}" />
+        <a ui-sref="mobile-platform.applications.cards">
+            <i class="material-icons md-light">arrow_back</i>
+        </a>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{applicationCtrl.card.title}}</span>
+            </md-card-title-text>
+            <md-card-content>
+                <p>{{applicationCtrl.card.text}}</p>
+            </md-card-content>
+        </md-card-title>
+    </div>
 </div>

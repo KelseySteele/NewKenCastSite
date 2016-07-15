@@ -267,6 +267,22 @@
                                 }   
                             })
 
+                                         .state('mobile-platform.equipment.cards', {
+                                             views: {
+                                                 'equipment': {
+                                                     templateUrl: '/views/services/mobile-platform/equipment/cards.html',
+                                                 }
+                                             }
+                                         })
+
+                                         .state('mobile-platform.equipment.card', {
+                                             views: {
+                                                 'equipment': {
+                                                     templateUrl: '/views/services/mobile-platform/equipment/card.html',
+                                                 }
+                                             }
+                                         })
+
                             .state('mobile-platform.faq', {
                                 views: {
                                     'fazztBody': {
